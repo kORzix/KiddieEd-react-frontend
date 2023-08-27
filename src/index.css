@@ -128,7 +128,7 @@ code {
 
 .container .card-body .btn:hover{
   transform: scale(1.1);
-  font-size: 1em;
+  /* font-size: 1em; */
 }
 
 .nav-container {
