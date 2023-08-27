@@ -16,7 +16,7 @@ function App() {
         <Navbar img={loginNav} />
         
         {/* Nav bar in the container */}
-        <div className="container" style={{width: '70%', padding: '2em 4em 2em 4em'}}>
+        <div className="container p-5 mb-5" style={{width: '70%'}}>
           <div className="nav-container">
             <div className="nav-buttons" style={{margin: '0 1.5em 0 1.5em'}}>
               <Link to="/worksheets" className="nav-button">Worksheets</Link>
@@ -27,110 +27,110 @@ function App() {
             </div>
           </div>
 
-          <h3>Guided Lessons</h3>
+          <h3 className='mt-4 mb-5'>Guided Lessons</h3>
 
           {/* Cards */}
-          <div class="row">
+          <div className="row d-flex justify-content-center">
 
             {/* Card 1 */}
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img1} class="card-img-top" alt="..." />
+            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img1} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Addition</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Addition</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img2} class="card-img-top" alt="..." />
+            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img2} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Famous Places</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Famous Places</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img3} class="card-img-top" alt="..." />
+            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img3} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Geometry</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Geometry</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>
             </div>
 
             {/* Card 4 */}
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img4} class="card-img-top" alt="..." />
+            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img4} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Vegetables</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Vegetables</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>
             </div>
 
             {/* Card 5 */}
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img5} class="card-img-top" alt="..." />
+            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img5} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Letters</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Letters</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>
             </div>
 
             {/* Card 6 */}
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img6} class="card-img-top" alt="..." />
+            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img6} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Space</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Space</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>
             </div>
 
             {/* Card 7 */}
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img7} class="card-img-top" alt="..." />
+            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img7} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Fruits</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Fruits</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>
             </div>
 
             {/* Card 8 */}
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img8} class="card-img-top" alt="..." />
+            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img8} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Animals</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Animals</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>

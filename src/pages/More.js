@@ -12,7 +12,7 @@ function App() {
         <Navbar img={loginNav} />
         
         {/* Nav bar in the container */}
-        <div className="container" style={{width: '70%', padding: '2em 4em 2em 4em'}}>
+        <div className="container p-5 mb-5" style={{width: '70%'}}>
           <div className="nav-container">
             <div className="nav-buttons" style={{margin: '0 1.5em 0 1.5em'}}>
               <Link to="/worksheets" className="nav-button">Worksheets</Link>
@@ -26,13 +26,13 @@ function App() {
           <h3></h3>
 
           {/* Cards */}
-          <div class="row">
+          <div class="row d-flex justify-content-center">
 
             {/* Card 1 */}
-            <div class="col-md-3">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
               <div class="card">
                 <div class="card-img">
-                  <img src={img1} class="card-img-top" alt="..." />
+                  <img src={img1} class="img-fluid mb-5 mt-5" alt="..." />
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">Monitor Progress</h5>
@@ -42,10 +42,10 @@ function App() {
             </div>
 
             {/* Card 2 */}
-            <div class="col-md-3">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
               <div class="card">
                 <div class="card-img">
-                  <img src={img2} class="card-img-top" alt="..." />
+                  <img src={img2} class="img-fluid mb-5 mt-5" alt="..." />
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">Premium Plans</h5>
@@ -55,10 +55,10 @@ function App() {
             </div>
 
             {/* Card 3 */}
-            <div class="col-md-3">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
               <div class="card">
                 <div class="card-img">
-                  <img src={img3} class="card-img-top" alt="..." />
+                  <img src={img3} class="img-fluid mb-5 mt-5" alt="..." />
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">Contact Us</h5>
@@ -68,10 +68,10 @@ function App() {
             </div>
 
             {/* Card 4 */}
-            <div class="col-md-3">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
               <div class="card">
                 <div class="card-img">
-                  <img src={img4} class="card-img-top" alt="..." />
+                  <img src={img4} class="img-fluid mb-5 mt-5" alt="..." />
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">Profile</h5>
