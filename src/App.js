@@ -13,7 +13,7 @@ function App() {
         {/* Nav bar in the container */}
         {/* , padding: '2em 4em 2em 4em' */}
         <div className="container p-5 mb-5" style={{width: '70%'}}>
-          <div className="nav-container">
+          {/* <div className="nav-container">
             <div className="nav-buttons" style={{margin: '0 1.5em 0 1.5em'}}>
               <Link to="/worksheets" className="nav-button">Worksheets</Link>
               <Link to="/games" className="nav-button">Games</Link>
@@ -21,7 +21,7 @@ function App() {
               <Link to="/lessons plans" className="nav-button">Lesson Plans</Link>
               <Link to="/more" className="nav-button">More</Link>
             </div>
-          </div>
+          </div> */}
 
           <h3 className='mt-4 mb-5'>Popular Activities</h3>
 
