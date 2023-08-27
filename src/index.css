@@ -79,6 +79,7 @@ code {
   background-color: white;
   border-radius: 20px;
   position: relative;
+  box-shadow: 0 0 15px 0px #00000077;
 }
 
 .App .container h3{
@@ -159,4 +160,45 @@ code {
 .nav-button:hover {
   color: #ffffff;
   transform: scale(1.1);
+}
+
+
+/* styles.css */
+.search-bar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1.5em;
+}
+
+.search-bar input {
+  border: 0px;
+  width: 30em;
+  background-color: rgba(38, 38, 38, 0.251);
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.212);
+  box-shadow: 0px 0px 3px 0px #00000056;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  color: white;
+  transition: 0.5s;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Change this color as needed */
+}
+
+.search-bar input:focus {
+  background-color: rgba(194, 194, 194, 0.251);
+  border: 1px solid rgba(194, 194, 194, 0.251);
+  box-shadow: 0px 0px 10px 0px #0000003d;
+  color: white;
+}
+
+.search-icon {
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.659);
 }
