@@ -11,7 +11,8 @@ function App() {
         <Navbar img={loginNav} />
 
         {/* Nav bar in the container */}
-        <div className="container" style={{width: '70%', padding: '2em 4em 2em 4em'}}>
+        {/* , padding: '2em 4em 2em 4em' */}
+        <div className="container p-5 mb-5" style={{width: '70%'}}>
           <div className="nav-container">
             <div className="nav-buttons" style={{margin: '0 1.5em 0 1.5em'}}>
               <Link to="/worksheets" className="nav-button">Worksheets</Link>
@@ -22,45 +23,45 @@ function App() {
             </div>
           </div>
 
-          <h3>Popular Activities</h3>
+          <h3 className='mt-4 mb-5'>Popular Activities</h3>
 
           {/* Cards */}
-          <div class="row">
+          <div className="row d-flex justify-content-center">
 
             {/* Card 1 */}
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img1} class="card-img-top" alt="..." />
+            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img1} className="img-fluid mb-5 mt-5" alt="..." style={{width:'65%'}} />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Letter Quiz</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Letter Quiz</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img2} class="card-img-top" alt="..." />
+            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img2} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Paint Bonanza</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Paint Bonanza</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img3} class="card-img-top" alt="..." />
+            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
+              <div className="card">
+                <div className="card-img">
+                  <img src={img3} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Addition</h5>
+                <div className="card-body">
+                  <h5 className="card-title">Addition</h5>
                   <Link to="/button1" className="btn">Start</Link>
                 </div>
               </div>
