@@ -9,7 +9,7 @@ function LoginPage() {
             <div className="m-">
                 <nav className="navbar navbar-expand-md navbar-dark">
                     <div className="container-fluid d-flex justify-content-start align-items-center">
-                        <Link to="/login" className="navbar-brand" style={{ fontFamily: "'Comic Sans MS', sans-serif", fontSize: '3em'}}>KiddeEd</Link>
+                        <Link to="/login" className="navbar-brand" style={{ fontFamily: "'Comic Sans MS', sans-serif", fontSize: '3em'}}>KiddieEd</Link>
                         <img src={loginNav} alt="Login" className="img-fluid" />
                     </div>
                 </nav>
