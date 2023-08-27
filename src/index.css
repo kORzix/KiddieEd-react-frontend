@@ -169,6 +169,13 @@ code {
   backdrop-filter: blur(20px);
 }
 
+.nav-buttons .nav-button-main{
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  text-decoration: none;
+
+}
+
 .nav-button:hover {
   color: #ffffff;
   transform: scale(1.1);
@@ -185,12 +192,12 @@ code {
 
 .search-bar input {
   border: 0px;
-  width: 30em;
+  width: 100%;
   background-color: rgba(38, 38, 38, 0.251);
   border: none;
   border: 1px solid rgba(0, 0, 0, 0.212);
   box-shadow: 0px 0px 3px 0px #00000056;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1rem;
   border-radius: 30px;
   color: white;
   transition: 0.5s;
@@ -213,4 +220,60 @@ code {
   top: 50%;
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.659);
+}
+
+
+/* ---------------------- Not Found ---------------------- */
+/* NotFound.css */
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.not-found-content {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.not-found-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #e74c3c;
+}
+
+.not-found-content p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.not-found-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/* --------------------- Profile --------------------- */
+.profile-img{
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  border: 5px solid #116CFF;
+}
+
+.Profile .container{
+  background-color: white;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 0 15px 0px #00000077;
+  width: 50%;
 }
