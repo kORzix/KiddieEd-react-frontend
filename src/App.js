@@ -32,7 +32,7 @@ function App() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
               <div className="card">
                 <div className="card-img">
-                  <img src={img1} className="img-fluid mb-5 mt-5" alt="..." style={{width:'65%'}} />
+                  <img src={img1} className="img-fluid mb-5 mt-5" alt="..." />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">Letter Quiz</h5>
