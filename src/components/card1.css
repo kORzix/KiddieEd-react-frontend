@@ -40,7 +40,7 @@
 
 body {
   /* solid background */
-  background: rgb(0,212,255);
+  /* background: rgb(0,212,255); */
   
   /* gradient background*/
   /* background: linear-gradient(45deg, rgba(0,212,255,1) 0%, rgba(11,3,45,1) 100%);     */
@@ -57,11 +57,11 @@ body {
 }
 
 .container {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.25);
+  /* backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%); */
+  background-color: #A9CBFF;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);  
+  border: 1px solid #A9CBFF;  
   padding: 38px;  
   filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
   display: flex;

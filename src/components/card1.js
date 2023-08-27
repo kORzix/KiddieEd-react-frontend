@@ -1,6 +1,8 @@
 import React from 'react';
 import { ReactDOM } from 'react';
 import './card1.css';
+import starUncheked from'./Images/star_checked.png';
+import starCheked from'./Images/star_unchecked.png';
 
 function card1() {
   // return (
@@ -42,13 +44,22 @@ function card1() {
     <div class="container">
       <div class="wrapper">
         <div class="banner-image"> </div>
-        <h1> Toyota Supra</h1>
-        <p>Lorem ipsum dolor sit amet, <br />
-          consectetur adipiscing elit.</p>
+        <h1> 
+          Letter Quiz
+          
+        </h1>
+        <img src={starUncheked} alt='star'></img>
+        <img src={starUncheked} alt='star'></img>
+        <img src={starCheked} alt='star'></img>
+        <img src={starCheked} alt='star'></img>
+        <img src={starCheked} alt='star'></img>
+        {/* <img src={star_checked}></img> */}
+        {/* <p>Lorem ipsum dolor sit amet, <br />
+          consectetur adipiscing elit.</p> */}
       </div>
       <div class="button-wrapper">
-        <button class="btn outline">DETAILS</button>
-        <button class="btn fill">BUY NOW</button>
+        {/* <button class="btn outline">DETAILS</button> */}
+        <button class="btn fill">Start</button>
       </div>
     </div>
 
