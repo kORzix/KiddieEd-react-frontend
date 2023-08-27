@@ -72,3 +72,91 @@ code {
 .container{
   margin-top: 5em;
 }
+
+
+/* ---------------------------------------- Dashboard ---------------------------------------- */
+.App .container{
+  background-color: white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.App .container h3{
+  font-family: Jomhuria;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 2em;
+  margin-top: 1.5em;
+}
+
+.container .card{
+  border-radius: 20px;
+  margin-bottom: 1em;
+  padding: 1em;
+  width: auto;
+  border: 0px;
+  box-shadow: 0px 0px 10px 0px #00000017;
+  transition: transform 0.3s ease;
+}
+
+.container .card:hover{
+  box-shadow: 0px 0px 20px 0px #00000017;
+  transform: scale(1.05);
+}
+
+.container .card-img{
+  height: 12em;
+  text-align: center;
+}
+
+.container .card-img img{
+  width: 80%;
+}
+
+.container .card-body{
+  border-top: 1px solid #00000023;
+}
+
+.container .card-body .btn{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  margin-top: 1em;
+  transition: transform 0.3s ease;
+}
+
+.container .card-body .btn:hover{
+  transform: scale(1.1);
+  font-size: 1em;
+}
+
+.nav-container {
+  position: absolute;
+  top: -35px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  background-color: #2d7dff70;
+  border-radius: 35px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px 0px #0000005b;
+  backdrop-filter: blur(20px);
+}
+
+.nav-buttons {
+  display: flex;
+  width: 93%;
+  justify-content: space-between;
+}
+
+.nav-button {
+  color: rgba(255, 255, 255, 0.674);
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.nav-button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
