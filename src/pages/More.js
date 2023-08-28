@@ -5,6 +5,7 @@ import img3 from '../images/more-img-3.png';
 import img4 from '../images/more-img-4.png';
 import { Link } from "react-router-dom";
 import Navbar from '../components/navbar';
+import TopNavBar from '../components/topnavbar';
 
 function More() {
   return (
@@ -13,15 +14,7 @@ function More() {
         
         {/* Nav bar in the container */}
         <div className="container p-5 mb-5" style={{width: '70%'}}>
-          <div className="nav-container">
-            <div className="nav-buttons" style={{margin: '0 1.5em 0 1.5em'}}>
-              <Link to="/worksheets" className="nav-button">Worksheets</Link>
-              <Link to="/games" className="nav-button">Games</Link>
-              <Link to="/guided lessons" className="nav-button">Guided Lessons</Link>
-              <Link to="/lessons plans" className="nav-button">Lesson Plans</Link>
-              <Link to="/more" className="nav-button-active">More</Link>
-            </div>
-          </div>
+          <TopNavBar/>
 
           <h3></h3>
 
