@@ -4,6 +4,7 @@ import img2 from './images/dashboard-img-2.png';
 import img3 from './images/dashboard-img-3.png';
 import { Link } from "react-router-dom";
 import Navbar from './components/navbar';
+import SubNavbar from './components/sub-navbar';
 
 function App() {
   return (
@@ -13,15 +14,7 @@ function App() {
         {/* Nav bar in the container */}
         {/* , padding: '2em 4em 2em 4em' */}
         <div className="container p-5 mb-5" style={{width: '70%'}}>
-          {/* <div className="nav-container">
-            <div className="nav-buttons" style={{margin: '0 1.5em 0 1.5em'}}>
-              <Link to="/worksheets" className="nav-button">Worksheets</Link>
-              <Link to="/games" className="nav-button">Games</Link>
-              <Link to="/guided lessons" className="nav-button">Guided Lessons</Link>
-              <Link to="/lessons plans" className="nav-button">Lesson Plans</Link>
-              <Link to="/more" className="nav-button">More</Link>
-            </div>
-          </div> */}
+          <SubNavbar />
 
           <h3 className='mt-4 mb-5'>Popular Activities</h3>
 

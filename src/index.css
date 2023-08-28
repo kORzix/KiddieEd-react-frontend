@@ -13,6 +13,95 @@ code {
     monospace;
 }
 
+/* ---------------------------------------- Sub Navbar ---------------------------------------- */
+.nav-container {
+  position: absolute;
+  top: -35px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  background-color: #2d7dff70;
+  border-radius: 35px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px 0px #0000005b;
+  backdrop-filter: blur(20px);
+  text-align: center
+}
+
+.nav-buttons {
+  display: flex;
+  width: 93%;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.nav-button {
+  color: rgba(255, 255, 255, 0.674);
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  padding: 0 1rem;
+}
+
+.nav-icon{
+  display: none;
+}
+
+.nav-buttons .nav-button-active{
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  background-color: #ffffff42;
+  padding: 0 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+}
+
+.nav-buttons .nav-button-main{
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  text-decoration: none;
+
+}
+
+.nav-button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 1421px) {
+  .m- {
+    width: 93%;
+  }
+  
+  .nav-button {
+    font-size: 1.1em;
+    padding: 0 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1269px) {
+  .nav-buttons {
+    width: 93%;
+  }
+  
+  .nav-button {
+    font-size: 1em;
+    padding: 0 0.6rem;
+  }
+}
+
+@media screen and (max-width: 1119px) {
+  .nav-container{
+    display: none;
+  }
+}
+
+
+/* --------------------------------------- Main Navbar --------------------------------------- */
+
 .nav{
   background-color: #86000000;
 }
@@ -129,56 +218,6 @@ code {
 .container .card-body .btn:hover{
   transform: scale(1.1);
   /* font-size: 1em; */
-}
-
-.nav-container {
-  position: absolute;
-  top: -35px; 
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  background-color: #2d7dff70;
-  border-radius: 35px;
-  padding: 20px;
-  box-shadow: 0px 0px 15px 0px #0000005b;
-  backdrop-filter: blur(20px);
-}
-
-.nav-buttons {
-  display: flex;
-  width: 93%;
-  justify-content: space-between;
-}
-
-.nav-button {
-  color: rgba(255, 255, 255, 0.674);
-  font-size: 1.2em;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-  padding: 0 1rem;
-}
-
-.nav-buttons .nav-button-active{
-  color: rgb(255, 255, 255);
-  font-size: 1.2em;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-  background-color: #ffffff42;
-  padding: 0 1rem;
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-}
-
-.nav-buttons .nav-button-main{
-  color: rgb(255, 255, 255);
-  font-size: 1.2em;
-  text-decoration: none;
-
-}
-
-.nav-button:hover {
-  color: #ffffff;
-  transform: scale(1.1);
 }
 
 
