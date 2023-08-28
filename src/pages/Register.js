@@ -44,7 +44,7 @@ function LoginPage() {
 
                     {/* Right Column for Image */}
                     <div className="col-md-6 d-flex justify-content-end">
-                        <img src={loginImage} alt="Login" className="img-fluid" style={{ maxWidth: '100%', height: 'auto' }} />
+                        <img src={loginImage} alt="Login" className="img-fluid" />
                     </div>
                 </div>
             </div>
