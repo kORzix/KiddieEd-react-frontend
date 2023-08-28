@@ -3,7 +3,7 @@ import loginImage from '../images/login-b.png';
 import loginNav from '../images/register-nav-img.png';
 import { Link } from "react-router-dom";
 
-function LoginPage() {
+function Register() {
     return (
         <div>
             <div className="m-">
@@ -52,4 +52,4 @@ function LoginPage() {
     );
 }
 
-export default LoginPage;
+export default Register;

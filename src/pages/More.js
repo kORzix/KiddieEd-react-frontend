@@ -6,7 +6,7 @@ import img4 from '../images/more-img-4.png';
 import { Link } from "react-router-dom";
 import Navbar from '../components/navbar';
 
-function App() {
+function More() {
   return (
     <div className="App">
         <Navbar img={loginNav} />
@@ -85,4 +85,4 @@ function App() {
   );
 }
 
-export default App;
+export default More;

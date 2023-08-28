@@ -10,7 +10,7 @@ import img8 from '../images/guided lessons-img-8.png';
 import { Link } from "react-router-dom";
 import Navbar from '../components/navbar';
 
-function App() {
+function GuidedLessons() {
   return (
     <div className="App">
         <Navbar img={loginNav} />
@@ -141,4 +141,4 @@ function App() {
   );
 }
 
-export default App;
+export default GuidedLessons;
