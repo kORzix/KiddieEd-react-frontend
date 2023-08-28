@@ -10,7 +10,7 @@ import img8 from '../images/worksheets-img-8.png';
 import { Link } from "react-router-dom";
 import Navbar from '../components/navbar';
 
-function App() {
+function Worksheet() {
   return (
     <div className="App">
         <Navbar img={loginNav} />
@@ -142,4 +142,4 @@ function App() {
   );
 }
 
-export default App;
+export default Worksheet;
