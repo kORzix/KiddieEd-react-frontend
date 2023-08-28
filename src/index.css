@@ -21,9 +21,9 @@ code {
   margin: 1em;
 }
 
-.img{
+/* .img{
   width: 30em;
-}
+} */
 
 .form{
   border-radius: 20px;
@@ -131,6 +131,10 @@ code {
   /* font-size: 1em; */
 }
 
+.navbar{
+  box-shadow: none;
+}
+
 .nav-container {
   position: absolute;
   top: -35px; 
@@ -190,6 +194,10 @@ code {
   margin-right: 1.5em;
 }
 
+#hide-search input:hover{
+  width: 30vw;
+}
+
 .search-bar input {
   border: 0px;
   width: 100%;
@@ -222,6 +230,29 @@ code {
   color: rgba(255, 255, 255, 0.659);
 }
 
+.hide-btn{
+  display: none;
+}
+
+.hide-btn:hover{  
+  transform: scale(1.2) !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .hide-btn{
+    display: flex;
+  }
+
+  #hide-search{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #s_bar{
+    display: none !important;
+  }
+}
 
 /* ---------------------- Not Found ---------------------- */
 /* NotFound.css */
