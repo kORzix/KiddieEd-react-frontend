@@ -26,7 +26,7 @@ function App() {
           <Route path='/worksheet' exact element={<Worksheet />} />
           <Route path='/games' exact element={<Games />} />
           <Route path='/guided-lessons' exact element={<GuidedLessons />} />
-          <Route path='/lesson-plans' exact element={<LessonPlans />} />
+          <Route path='/lessons-plans' exact element={<LessonPlans />} />
           <Route path='/more' exact element={<More />} />
           {/* <Route path='/article/:name' element={<Article />} /> */}
           {/* <Route path='*' element={<NotFound />} /> */}
