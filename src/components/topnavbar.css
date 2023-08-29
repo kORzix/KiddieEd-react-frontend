@@ -1,4 +1,4 @@
-/* .nav-container {
+.nav-container {
     position: absolute;
     top: -35px; 
     left: 50%;
@@ -14,13 +14,13 @@
   
   .side-nav-container {
     position: fixed;
-    top: 450px; 
+    top: 350px; 
     left: 15%;
     transform: translateX(-50%);
     width: 10%;
     background-color: #2d7dff70;
     border-radius: 35px;
-    padding: 30px 0 10px 0;
+    padding: 30px 0 20px 0;
     box-shadow: 0px 0px 15px 0px #0000005b;
     backdrop-filter: blur(20px);
     z-index: 1;
@@ -35,7 +35,6 @@
   .side-nav-buttons {
     display: grid;
     width: 250%;
-    border: 1px solid rgb(255, 0, 0);
   }
   
   .nav-button {
@@ -43,7 +42,6 @@
     font-size: 1.2em;
     text-decoration: none;
     transition: transform 0.3s ease;
-    padding: 0 1rem;
   }
   
   .side-nav-button {
@@ -51,12 +49,12 @@
     font-size: 1.2em;
     text-decoration: none;
     transition: transform 0.3s ease;
-    padding: 0 1rem;
-    border: 1px solid rgb(0, 116, 21);
   }
   
-  .nav-icon{
-    display: none;
+  .icon{
+    width: 20%;
+    padding: 0.5em 0;
+
   }
   
   .nav-buttons .nav-button-active {
@@ -89,12 +87,9 @@
     }
     
     .nav-button {
-      font-size: 0.5em;
-      padding: 0 0.5rem;
-      background-color: blue;
+      font-size: 1.1em;
+      padding: 0 0.8rem;
     }
-  
-    body{background-color: red;}
   }
   
   @media screen and (max-width: 1269px) {
@@ -106,8 +101,6 @@
       font-size: 1em;
       padding: 0 0.6rem;
     }
-  
-    body{background-color: green;}
   }
   
   @media screen and (max-width: 1119px) {
@@ -121,4 +114,4 @@
       display: none;
     }
   }
-   */
+  
