@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import Navbar from '../components/navbar';
 import TopNavBar from '../components/topnavbar';
 
-function App() {
+function Worksheet() {
   return (
     <div className="App">
         <Navbar img={loginNav} />
@@ -135,4 +135,4 @@ function App() {
   );
 }
 
-export default App;
+export default Worksheet;

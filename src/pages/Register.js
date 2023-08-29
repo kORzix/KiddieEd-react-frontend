@@ -3,7 +3,7 @@ import loginImage from '../images/login-b.png';
 import loginNav from '../images/register-nav-img.png';
 import { Link } from "react-router-dom";
 
-function LoginPage() {
+function Register() {
     return (
         <div>
             <div className="m-">
@@ -44,7 +44,7 @@ function LoginPage() {
 
                     {/* Right Column for Image */}
                     <div className="col-md-6 d-flex justify-content-end">
-                        <img src={loginImage} alt="Login" className="img-fluid" style={{ maxWidth: '100%', height: 'auto' }} />
+                        <img src={loginImage} alt="Login" className="img-fluid" />
                     </div>
                 </div>
             </div>
@@ -52,4 +52,4 @@ function LoginPage() {
     );
 }
 
-export default LoginPage;
+export default Register;

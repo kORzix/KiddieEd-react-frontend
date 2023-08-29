@@ -20,7 +20,7 @@ import Card from '../components/card'
 //       />)
 //       })  
 
-function App() {
+function Games() {
   return (
     <div className="App">
       <Navbar img={loginNav} />
@@ -146,4 +146,4 @@ function App() {
   );
 }
 
-export default App;
+export default Games;

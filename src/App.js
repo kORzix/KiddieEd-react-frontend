@@ -18,7 +18,6 @@ function App() {
   return (
     <BrowserRouter>
       {/* <Navbar /> */}
-      {/* <div className="container p-5 mb-5" style={{width: '100%'}}> */}
         <Routes>
           <Route path='/' exact element={<Home />} />
           <Route path='/login' exact element={<Login />} />
@@ -37,4 +36,3 @@ function App() {
 }
 
 export default App;
-
