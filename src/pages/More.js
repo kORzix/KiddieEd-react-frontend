@@ -47,74 +47,29 @@ import Card from '../components/card'
 //   );
 // }
 
+let card = [
+  {image: img1,title: "Letter Quiz"},
+  {image: img2,title: "Match the Fruit"},
+  {image: img3,title: "Science Trivia"},
+  {image: img4,title: "Guess the Country"},
+];
+
 function More() {
   return (
     <div className="App">
         <Navbar img={loginNav} />
 
         
-        <Card/>
+        {/* <Card/> */}
         {/* Nav bar in the container */}
         <div className="container p-5 mb-5" style={{width: '70%'}}>
           <TopNavBar/>
 
           <h3></h3>
-
-          {/* Cards */}
           <div class="row d-flex justify-content-center">
-
-
-            {/* Card 1 */}
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img1} class="img-fluid mb-5 mt-5" alt="..." />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Monitor Progress</h5>
-                  <Link to="/button1" className="btn">Start</Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img2} class="img-fluid mb-5 mt-5" alt="..." />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Premium Plans</h5>
-                  <Link to="/button1" className="btn">Start</Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img3} class="img-fluid mb-5 mt-5" alt="..." />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Contact Us</h5>
-                  <Link to="/button1" className="btn">Start</Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
-              <div class="card">
-                <div class="card-img">
-                  <img src={img4} class="img-fluid mb-5 mt-5" alt="..." />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Profile</h5>
-                  <Link to="/profile" className="btn">Start</Link>
-                </div>
-              </div>
-            </div>
+            {card.map((card)=>(
+              <Card image={card.image} title={card.title}/>
+            ))}
           </div>
         </div>
     </div>
