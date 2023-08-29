@@ -13,6 +13,31 @@ code {
     monospace;
 }
 
+/* -------------------------------- Scrollbar -------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar:hover {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f139; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a85; 
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+/* --------------------------------------- Main Navbar --------------------------------------- */
+
 .nav{
   background-color: #86000000;
 }
@@ -20,10 +45,6 @@ code {
 .m-{
   margin: 1em;
 }
-
-/* .img{
-  width: 30em;
-} */
 
 .form{
   border-radius: 20px;
@@ -134,7 +155,7 @@ code {
 .navbar{
   box-shadow: none;
 }
-
+/* 
 .nav-container {
   position: absolute;
   top: -35px; 
@@ -183,7 +204,7 @@ code {
 .nav-button:hover {
   color: #ffffff;
   transform: scale(1.1);
-}
+} */
 
 
 /* styles.css */

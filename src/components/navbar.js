@@ -17,7 +17,7 @@ const Navbar = ({img}) => {
             <div className="container-fluid d-flex justify-content-between align-items-center">
               <div className="d-flex align-items-center">
                 <Link to="/" className="navbar-brand" style={{ fontFamily: "'Comic Sans MS', sans-serif",fontSize:'4vw'}}>KiddieEd</Link>
-                <img src={img} alt="Login" className="img-fluid" style={{ marginRight: '1rem'}} />
+                <img src={img} alt="Login" className="img-fluid" style={{ marginRight: '1rem', height: '80px'}} />
               </div>
               <div className="search-bar  align-items-center" id="hide-search">
                 <input type="text" className="form-control text-reset" placeholder="Search" />
