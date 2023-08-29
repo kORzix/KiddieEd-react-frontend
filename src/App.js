@@ -32,6 +32,7 @@ function App() {
         </Routes>
       {/* </div> */}
     </BrowserRouter>
+    //add test comment from buddhika
   );
 }
 
