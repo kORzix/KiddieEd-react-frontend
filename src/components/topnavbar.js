@@ -1,11 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import './topnavbar.css';
-import worksheet from "../images/worksheet.icon.png";
-import game from "../images/game.icon.png";
-import lesson from "../images/lessons.icon.png";
-import plan from "../images/plans.icon.png";
-import more from "../images/more.icon.png";
+import navBarImg from "./navBarImg"
 
 const Navbar = () => {
     return (
@@ -22,11 +18,11 @@ const Navbar = () => {
 
             <div className="side-nav-container">
                 <div className="side-nav-buttons" style={{margin: '0 1.5em 0 1.5em'}}>
-                    <Link to="/worksheet" className="side-nav-button"><img className="icon" src={worksheet} /></Link>
-                    <Link to="/games" className="side-nav-button"><img className="icon" src={game} /></Link>
-                    <Link to="/guided-lessons" className="side-nav-button"><img className="icon" src={lesson} /></Link>
-                    <Link to="/lessons-plans" className="side-nav-button"><img className="icon" src={plan} /></Link>
-                    <Link to="/more" className="side-nav-button"><img className="icon" src={more} /></Link>
+                    <Link to="/worksheet" className="side-nav-button"><img className="icon" src={navBarImg.worksheet} alt="worksheet icon"/></Link>
+                    <Link to="/games" className="side-nav-button"><img className="icon" src={navBarImg.game} alt="game icon" /></Link>
+                    <Link to="/guided-lessons" className="side-nav-button"><img className="icon" src={navBarImg.lesson} alt="lesson icon" /></Link>
+                    <Link to="/lessons-plans" className="side-nav-button"><img className="icon" src={navBarImg.plan} alt="plan icon" /></Link>
+                    <Link to="/more" className="side-nav-button"><img className="icon" src={navBarImg.more} alt="more icon" /></Link>
                 </div>
             </div>
         </div>
