@@ -1,6 +1,5 @@
 import loginNav from '../../images/games-nav-img.png';
 import profile from '../../images/profile.png';
-import { Link } from "react-router-dom";
 import Navbar from '../../components/navbar';
 
 function Profile() {

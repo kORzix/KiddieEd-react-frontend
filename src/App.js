@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Pages
 import Home from "./pages/Home";
@@ -9,6 +9,8 @@ import More from "./pages/More";
 import Register from "./pages/Register";
 import Worksheet from "./pages/Worksheets";
 import Login from "./pages/LoginPage";
+import Profile from "./pages/More/Profile";
+import AddCourse from "./pages/admin/AddCourse";
 import './index.css';
 
 // Components
@@ -27,6 +29,8 @@ function App() {
           <Route path='/guided-lessons' exact element={<GuidedLessons />} />
           <Route path='/lessons-plans' exact element={<LessonPlans />} />
           <Route path='/more' exact element={<More />} />
+          <Route path='/profile' exact element={<Profile />} />
+          <Route path='/addlesson' exact element={<AddCourse />} />
           {/* <Route path='/article/:name' element={<Article />} /> */}
           {/* <Route path='*' element={<NotFound />} /> */}
         </Routes>
