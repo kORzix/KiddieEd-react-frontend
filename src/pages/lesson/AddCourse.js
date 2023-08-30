@@ -1,44 +1,29 @@
 import axios from "axios";
-import React from "react";
+import React ,{ useState } from "react";
 
-export default function AddCourse() {
-  const [lesson, setLesson] = React.useState({
-    lessonName: "",
-    image: "",
-    payment: "",
-    category: "",
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setLesson({
-      ...lesson,
-      [name]: value,
-    });
-  };
+export default function AddCourse() {  
+  const [file,setFile] = useState();
+  const [lessonName,setLessonName] = useState({});
+  const [payment,setPayment] = useState({});
+  const [category,setCategory] = useState({});
 
   const onSubmit = (e) => {
-    e.preventDefault();
-    const { lessonName, image, payment, category } = lesson;
+    const formdata = new FormData();
 
-    const data = {
-      lessonName: lessonName,
-      image: image,
-      payment: payment,
-      category: category,
-    };
+    formdata.append('file',file);
+    formdata.append('lessonName',lessonName);
+    formdata.append('payment',payment);
+    formdata.append('category',category);
 
-    console.log(data);
+    console.log(formdata);
 
-    axios.post("http://localhost:8000/lesson/add", data).then((res) => {
+    axios.post("http://localhost:8000/lesson/add", formdata).then((res) => {
       if (res.data.success) {
         console.log(res.data.success);
-        setLesson({
-          lessonName: "",
-          image: "",
-          payment: "",
-          category: "",
-        });
+        setFile({});
+        setLessonName({});
+        setPayment({});
+        setCategory({});
       }
     });
   };
@@ -54,8 +39,8 @@ export default function AddCourse() {
             className="form-control"
             name="lessonName"
             placeholder="Enter Lesson Name"
-            value={lesson.lessonName}
-            onChange={handleInputChange}
+            // value={lesson.lessonName} e => setLessonName(e.target)
+            onChange={e => setLessonName(e.target.value)}
           />
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
@@ -63,10 +48,10 @@ export default function AddCourse() {
           <input
             type="file"
             className="form-control"
-            name="image"
+            name="file"
             placeholder="Upload a Image"
-            value={lesson.image}
-            onChange={handleInputChange}
+            // value={lesson.image}
+            onChange={e => setFile(e.target.files[0])}
           />
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
@@ -76,8 +61,8 @@ export default function AddCourse() {
             className="form-control"
             name="payment"
             placeholder="Enter Payement Type"
-            value={lesson.payment}
-            onChange={handleInputChange}
+            // value={lesson.payment}
+            onChange={e => setPayment(e.target.value)}
           />
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
@@ -87,8 +72,8 @@ export default function AddCourse() {
             className="form-control"
             name="category"
             placeholder="Enter Lesson Category"
-            value={lesson.category}
-            onChange={handleInputChange}
+            // value={lesson.category}
+            onChange={e => setCategory(e.target.value)}
           />
         </div>
         <button

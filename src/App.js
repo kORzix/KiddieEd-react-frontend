@@ -16,8 +16,6 @@ import ViewAll from "./pages/lesson/ViewAll";
 import ViewCourse from "./pages/lesson/ViewCourse";
 import EditCourse from "./pages/lesson/EditCourse";
 
-import Prev from "./pages/lesson/Prev";
-import Photo from "./pages/lesson/Photo";
 
 import './index.css';
 
@@ -43,11 +41,6 @@ function App() {
           <Route path='/lessons' exact element={<ViewAll />} />
           <Route path='/viewlesson/:id' exact element={<ViewCourse />} />
           <Route path='/editlesson/:id' exact element={<EditCourse />} />
-
-          <Route path='/prev' exact element={<Prev />} />
-          <Route path='/photo' exact element={<Photo />} />
-
-
 
           {/* <Route path='/article/:name' element={<Article />} /> */}
           {/* <Route path='*' element={<NotFound />} /> */}
