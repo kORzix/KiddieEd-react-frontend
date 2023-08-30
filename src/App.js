@@ -1,74 +1,60 @@
-import loginNav from './images/dashboard-nav-img.png';
-import img1 from './images/dashboard-img-1.png';
-import img2 from './images/dashboard-img-2.png';
-import img3 from './images/dashboard-img-3.png';
-import { Link } from "react-router-dom";
-import Navbar from './components/navbar';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// Pages
+import Home from "./pages/Home";
+import Games from "./pages/Games";
+import GuidedLessons from "./pages/GuidedLessons";
+import LessonPlans from "./pages/LessonPlans";
+import More from "./pages/More";
+import Register from "./pages/Register";
+import Worksheet from "./pages/Worksheets";
+import Login from "./pages/LoginPage";
+import Profile from "./pages/More/Profile";
+
+import AddCourse from "./pages/lesson/AddCourse";
+import ViewAll from "./pages/lesson/ViewAll";
+import ViewCourse from "./pages/lesson/ViewCourse";
+import EditCourse from "./pages/lesson/EditCourse";
+
+import Prev from "./pages/lesson/Prev";
+import Photo from "./pages/lesson/Photo";
+
+import './index.css';
+
+// Components
+// import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-        <Navbar img={loginNav} />
+    <BrowserRouter>
+      {/* <Navbar /> */}
+        <Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='/login' exact element={<Login />} />
+          <Route path='/register' exact element={<Register />} />
+          <Route path='/worksheet' exact element={<Worksheet />} />
+          <Route path='/games' exact element={<Games />} />
+          <Route path='/guided-lessons' exact element={<GuidedLessons />} />
+          <Route path='/lessons-plans' exact element={<LessonPlans />} />
+          <Route path='/more' exact element={<More />} />
+          <Route path='/profile' exact element={<Profile />} />
 
-        {/* Nav bar in the container */}
-        {/* , padding: '2em 4em 2em 4em' */}
-        <div className="container p-5 mb-5" style={{width: '70%'}}>
-          {/* <div className="nav-container">
-            <div className="nav-buttons" style={{margin: '0 1.5em 0 1.5em'}}>
-              <Link to="/worksheets" className="nav-button">Worksheets</Link>
-              <Link to="/games" className="nav-button">Games</Link>
-              <Link to="/guided lessons" className="nav-button">Guided Lessons</Link>
-              <Link to="/lessons plans" className="nav-button">Lesson Plans</Link>
-              <Link to="/more" className="nav-button">More</Link>
-            </div>
-          </div> */}
+          <Route path='/addlesson' exact element={<AddCourse />} />
+          <Route path='/lessons' exact element={<ViewAll />} />
+          <Route path='/viewlesson/:id' exact element={<ViewCourse />} />
+          <Route path='/editlesson/:id' exact element={<EditCourse />} />
 
-          <h3 className='mt-4 mb-5'>Popular Activities</h3>
+          <Route path='/prev' exact element={<Prev />} />
+          <Route path='/photo' exact element={<Photo />} />
 
-          {/* Cards */}
-          <div className="row d-flex justify-content-center">
 
-            {/* Card 1 */}
-            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
-              <div className="card">
-                <div className="card-img">
-                  <img src={img1} className="img-fluid mb-5 mt-5" alt="..." />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">Letter Quiz</h5>
-                  <Link to="/button1" className="btn">Start</Link>
-                </div>
-              </div>
-            </div>
 
-            {/* Card 2 */}
-            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
-              <div className="card">
-                <div className="card-img">
-                  <img src={img2} className="img-fluid mb-5 mt-5" alt="..." />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">Paint Bonanza</h5>
-                  <Link to="/button1" className="btn">Start</Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
-              <div className="card">
-                <div className="card-img">
-                  <img src={img3} className="img-fluid mb-5 mt-5" alt="..." />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">Addition</h5>
-                  <Link to="/button1" className="btn">Start</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+          {/* <Route path='/article/:name' element={<Article />} /> */}
+          {/* <Route path='*' element={<NotFound />} /> */}
+        </Routes>
+      {/* </div> */}
+    </BrowserRouter>
+    //add test comment from buddhika
   );
 }
 

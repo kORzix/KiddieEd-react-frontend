@@ -9,24 +9,17 @@ import img7 from '../images/games-img-7.png';
 import img8 from '../images/games-img-8.png';
 import { Link } from "react-router-dom";
 import Navbar from '../components/navbar';
+import TopNavBar from '../components/topnavbar';
 
-function App() {
+function Games() {
   return (
     <div className="App">
         <Navbar img={loginNav} />
         
         {/* Nav bar in the container */}
         <div className="container p-5 mb-5" style={{width: '70%'}}>
-          <div className="nav-container">
-            <div className="nav-buttons" style={{margin: '0 1.5em 0 1.5em'}}>
-              <Link to="/worksheets" className="nav-button">Worksheets</Link>
-              <Link to="/games" className="nav-button-active">Games</Link>
-              <Link to="/guided lessons" className="nav-button">Guided Lessons</Link>
-              <Link to="/lessons plans" className="nav-button">Lesson Plans</Link>
-              <Link to="/more" className="nav-button">More</Link>
-            </div>
-          </div>
 
+          <TopNavBar/>
           <h3 className='mt-4 mb-5'>Games</h3>
 
           {/* Cards */}
@@ -141,4 +134,4 @@ function App() {
   );
 }
 
-export default App;
+export default Games;

@@ -1,11 +1,12 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #116CFF;
+  padding: 0.5% 2% 0 2%;
 }
 
 code {
@@ -13,16 +14,37 @@ code {
     monospace;
 }
 
+/* -------------------------------- Scrollbar -------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar:hover {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f139; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a85; 
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+/* --------------------------------------- Main Navbar --------------------------------------- */
+
 .nav{
   background-color: #86000000;
 }
 
 .m-{
   margin: 1em;
-}
-
-.img{
-  width: 30em;
 }
 
 .form{
@@ -131,6 +153,10 @@ code {
   /* font-size: 1em; */
 }
 
+.navbar{
+  box-shadow: none;
+}
+/* 
 .nav-container {
   position: absolute;
   top: -35px; 
@@ -179,7 +205,7 @@ code {
 .nav-button:hover {
   color: #ffffff;
   transform: scale(1.1);
-}
+} */
 
 
 /* styles.css */
@@ -188,6 +214,10 @@ code {
   display: inline-flex;
   align-items: center;
   margin-right: 1.5em;
+}
+
+#hide-search input:hover{
+  width: 30vw;
 }
 
 .search-bar input {
@@ -222,6 +252,29 @@ code {
   color: rgba(255, 255, 255, 0.659);
 }
 
+.hide-btn{
+  display: none;
+}
+
+.hide-btn:hover{  
+  transform: scale(1.2) !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .hide-btn{
+    display: flex;
+  }
+
+  #hide-search{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #s_bar{
+    display: none !important;
+  }
+}
 
 /* ---------------------- Not Found ---------------------- */
 /* NotFound.css */
