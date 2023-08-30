@@ -29,7 +29,7 @@ export default function ViewCourse() {
 
       <dl className="row">
         <dt className="col-sm-3">Image</dt>
-        <dd className="col-sm-9">{image}</dd>
+        <dd className="col-sm-9"><img src={`http://localhost:8000/images/`+image} width={'80vh'}/></dd>
 
         <dt className="col-sm-3">Payment</dt>
         <dd className="col-sm-9">{payment}</dd>

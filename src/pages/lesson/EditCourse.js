@@ -78,9 +78,10 @@ export default function EditCourse() {
             type="file"
             className="form-control"
             name="image"
-            value={lesson.image}
+            // value={lesson.image}
             onChange={handleInputChange}
           />
+          <img src={`http://localhost:8000/images/`+lesson.image} width={'80vh'}/>
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
           <label style={{ marginBottom: "5px" }}>Payment</label>
