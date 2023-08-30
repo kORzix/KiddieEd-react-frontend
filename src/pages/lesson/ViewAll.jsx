@@ -75,7 +75,7 @@ export default function ViewAll() {
               <td>
                 <a
                   href={`/viewlesson/${lessons._id}`}
-                  style={{ textDecoration: "none" }}
+                  style={{ textDecoration: "none", color:'black',fontWeight:'bold'}}
                 >
                   {lessons.lessonName}
                 </a>
