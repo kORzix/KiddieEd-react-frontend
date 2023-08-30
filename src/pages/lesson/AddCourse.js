@@ -32,6 +32,7 @@ export default function AddCourse() {
 
     axios.post("http://localhost:8000/lesson/add", data).then((res) => {
       if (res.data.success) {
+        console.log(res.data.success);
         setLesson({
           lessonName: "",
           image: "",
