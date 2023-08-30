@@ -80,7 +80,8 @@ export default function ViewAll() {
                   {lessons.lessonName}
                 </a>
               </td>
-              <td>{lessons.image}</td>
+              {/* <td>{lessons.image}</td> */}
+              <td><img src={`http://localhost:8000/images/`+lessons.image} width={'80vh'}/></td>
               <td>{lessons.payment}</td>
               <td>{lessons.category}</td>
               <td>
