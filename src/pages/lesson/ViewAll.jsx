@@ -75,12 +75,13 @@ export default function ViewAll() {
               <td>
                 <a
                   href={`/viewlesson/${lessons._id}`}
-                  style={{ textDecoration: "none" }}
+                  style={{ textDecoration: "none", color:'black',fontWeight:'bold'}}
                 >
                   {lessons.lessonName}
                 </a>
               </td>
-              <td>{lessons.image}</td>
+              {/* <td>{lessons.image}</td> */}
+              <td><img src={`http://localhost:8000/images/`+lessons.image} width={'80vh'}/></td>
               <td>{lessons.payment}</td>
               <td>{lessons.category}</td>
               <td>
