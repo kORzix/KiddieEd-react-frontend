@@ -1,19 +1,25 @@
 import axios from "axios";
-import React ,{ useState } from "react";
+import React, { useState } from "react";
+import upload from "../../images/upload.jpg";
 
-export default function AddCourse() {  
-  const [file,setFile] = useState();
-  const [lessonName,setLessonName] = useState({});
-  const [payment,setPayment] = useState({});
-  const [category,setCategory] = useState({});
+export default function AddCourse() {
+  const [file, setFile] = useState();
+  const [lessonName, setLessonName] = useState({});
+  const [payment, setPayment] = useState({});
+  const [category, setCategory] = useState({});
 
   const onSubmit = (e) => {
     const formdata = new FormData();
-
-    formdata.append('file',file);
-    formdata.append('lessonName',lessonName);
-    formdata.append('payment',payment);
-    formdata.append('category',category);
+    // if (file) {
+      formdata.append("file", file);
+      formdata.append("lessonName", lessonName);
+      formdata.append("payment", payment);
+      formdata.append("category", category);
+    // } else {
+    //   formdata.append("lessonName", lessonName);
+    //   formdata.append("payment", payment);
+    //   formdata.append("category", category);
+    // }
 
     console.log(formdata);
 
@@ -40,20 +46,35 @@ export default function AddCourse() {
             name="lessonName"
             placeholder="Enter Lesson Name"
             // value={lesson.lessonName} e => setLessonName(e.target)
-            onChange={e => setLessonName(e.target.value)}
+            onChange={(e) => setLessonName(e.target.value)}
           />
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
-          <label style={{ marginBottom: "5px" }}>Image</label>
           <input
+            hidden
+            id="image-upload"
             type="file"
             className="form-control"
             name="file"
             placeholder="Upload a Image"
             // value={lesson.image}
-            onChange={e => setFile(e.target.files[0])}
+            onChange={(e) => setFile(e.target.files[0])}
           />
+          <label
+            htmlFor="image-upload"
+            style={{ marginBottom: "5px", marginTop: "20px" }}
+          >
+            {file ? (
+              <img src={URL.createObjectURL(file)} height={"100vh"} />
+            ) : (
+              <img src={upload} height={"100vh"} />
+            )}
+            <br />
+            Upload Image
+          </label>
         </div>
+        {/* {file && <img src={URL.createObjectURL(file)} height={"100vh"} />} */}
+
         <div className="form-group" style={{ marginBottom: "15px" }}>
           <label style={{ marginBottom: "5px" }}>Payement Type</label>
           <input
@@ -62,7 +83,7 @@ export default function AddCourse() {
             name="payment"
             placeholder="Enter Payement Type"
             // value={lesson.payment}
-            onChange={e => setPayment(e.target.value)}
+            onChange={(e) => setPayment(e.target.value)}
           />
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
@@ -73,7 +94,7 @@ export default function AddCourse() {
             name="category"
             placeholder="Enter Lesson Category"
             // value={lesson.category}
-            onChange={e => setCategory(e.target.value)}
+            onChange={(e) => setCategory(e.target.value)}
           />
         </div>
         <button

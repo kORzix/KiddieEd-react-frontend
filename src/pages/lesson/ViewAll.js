@@ -3,6 +3,7 @@ import axios from "axios";
 
 export default function ViewAll() {
   const [lessons, setLessons] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
     retrieveLessons();
@@ -34,10 +35,13 @@ export default function ViewAll() {
 
   const handleSearchArea = (e)=>{
     const searchKey = e.currentTarget.value;
+    setIsLoading(true)
     axios.get("http://localhost:8000/lessons").then(res =>{
       if(res.data.success){
         filterData(res.data.existingLessons,searchKey);
       }
+    }).finally(() => {
+      setIsLoading(false)
     });
   }
 
@@ -69,7 +73,7 @@ export default function ViewAll() {
           </tr>
         </thead>
         <tbody>
-          {lessons.map((lessons, index) => (
+          {isLoading ? 'loading...' : lessons.map((lessons, index) => (
             <tr key={index}>
               <th scope="row">{index + 1}</th>
               <td>
