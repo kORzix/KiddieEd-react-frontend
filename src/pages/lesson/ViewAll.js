@@ -19,8 +19,8 @@ export default function ViewAll() {
 
   const onDelete = (id) => {
     axios.delete(`http://localhost:8000/lesson/delete/${id}`).then((res) => {
-      alert("Delete Successfully");
       retrieveLessons();
+      alert("Delete Successfully");
     });
   };
 
