@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
+import { PROXY } from "../../configs";
 
-export default function ViewAll() {
+export default function ViewLessons() {
   const [lessons, setLessons] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -10,7 +11,7 @@ export default function ViewAll() {
   }, []);
 
   function retrieveLessons() {
-    axios.get("http://localhost:8000/lessons").then((res) => {
+    axios.get(PROXY+"/lessons").then((res) => {
       if (res.data.success) {
         setLessons(res.data.existingLessons);
       }
@@ -18,7 +19,7 @@ export default function ViewAll() {
   }
 
   const onDelete = (id) => {
-    axios.delete(`http://localhost:8000/lesson/delete/${id}`).then((res) => {
+    axios.delete(PROXY+`/lesson/delete/${id}`).then((res) => {
       retrieveLessons();
       alert("Delete Successfully");
     });
@@ -36,7 +37,7 @@ export default function ViewAll() {
   const handleSearchArea = (e)=>{
     const searchKey = e.currentTarget.value;
     setIsLoading(true)
-    axios.get("http://localhost:8000/lessons").then(res =>{
+    axios.get(PROXY+"/lessons").then(res =>{
       if(res.data.success){
         filterData(res.data.existingLessons,searchKey);
       }
@@ -78,20 +79,20 @@ export default function ViewAll() {
               <th scope="row">{index + 1}</th>
               <td>
                 <a
-                  href={`/viewlesson/${lessons._id}`}
+                  href={`/lesson/view/${lessons._id}`}
                   style={{ textDecoration: "none", color:'black',fontWeight:'bold'}}
                 >
                   {lessons.lessonName}
                 </a>
               </td>
               {/* <td>{lessons.image}</td> */}
-              <td><img src={`http://localhost:8000/images/`+lessons.image} width={'80vh'}/></td>
+              <td><img src={PROXY+`/images/`+lessons.image} width={'80vh'} alt="Lesson Img"/></td>
               <td>{lessons.payment}</td>
               <td>{lessons.category}</td>
               <td>
                 <a
                   className="btn btn-warning"
-                  href={`/editlesson/${lessons._id}`}
+                  href={`/lesson/edit/${lessons._id}`}
                 >
                   <i className="fas fa-edit"></i>&nbsp;Edit
                 </a>
@@ -109,8 +110,8 @@ export default function ViewAll() {
         </tbody>
       </table>
       <button className="btn btn-success">
-        <a href="/addlesson" style={{ textDecoration: "none", color: "white" }}>
-          Create New Post
+        <a href="/lesson/add" style={{ textDecoration: "none", color: "white" }}>
+          Add New Lesson
         </a>
       </button>
     </div>

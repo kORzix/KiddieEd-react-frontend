@@ -2,61 +2,33 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import upload from "../../images/upload.jpg";
+import { PROXY } from "../../configs";
 
-export default function EditCourse() {
+export default function EditLesson() {
   const id = useParams().id;
   const [file, setFile] = useState();  
   const [image, setImage] = useState();
   const [lessonName, setLessonName] = useState({});
   const [payment, setPayment] = useState({});
   const [category, setCategory] = useState({});
-  // const [lesson, setLesson] = useState({
-  //   lessonName: "",
-  //   image: "",
-  //   payment: "",
-  //   category: "",
-  // });
 
   const handleInputChange = (e) => {
     setFile(e.target.files[0]);
     setImage(URL.createObjectURL(e.target.files[0]));
-  //   const { name, value } = e.target;
-  //   setLesson({
-  //     ...lesson,
-  //     [name]: value,
-  //   });
   };
 
   React.useEffect(() => {
-    axios.get(`http://localhost:8000/lesson/${id}`).then((res) => {
+    axios.get(PROXY+`/lesson/${id}`).then((res) => {
       if (res.data.success) {
-        setImage(`http://localhost:8000/images/` + res.data.lesson.image);
+        setImage(PROXY+`/images/` + res.data.lesson.image);
         setLessonName(res.data.lesson.lessonName);
         setPayment(res.data.lesson.payment);
         setCategory(res.data.lesson.category);
-        // setLesson({
-        //     lessonName: res.data.lesson.lessonName,
-        //     image: res.data.lesson.image,
-        //     payment: res.data.lesson.payment,
-        //     category: res.data.lesson.category
-        // });
       }
     });
   }, [id]);
 
   const onSubmit = (e) => {
-    // e.preventDefault();    
-    // const { lessonName, image, payment, category } = lesson;
-
-    // const data = {
-    //     lessonName: lessonName,
-    //     image: image,
-    //     payment: payment,
-    //     category: category,
-    // };
-
-    // console.log(data);
-
     const formdata = new FormData();
 
     formdata.append("file", file);
@@ -64,22 +36,10 @@ export default function EditCourse() {
     formdata.append("payment", payment);
     formdata.append("category", category);
 
-    // axios.put(`http://localhost:8000/lesson/update/${id}`, data).then((res) => {
-    //   if (res.data.success) {
-    //     alert("Lesson updated successfully");
-    //     setLesson({
-    //         lessonName: "",
-    //         image: "",
-    //         payment: "",
-    //         category: "",
-    //     });
-    //   }
-    // });
-
-    console.log(formdata);
+    // console.log(formdata);
 
     axios
-      .put(`http://localhost:8000/lesson/update/${id}`, formdata)
+      .put(PROXY+`/lesson/update/${id}`, formdata)
       .then((res) => {
         if (res.data.success) {
           console.log(res.data.success);
@@ -122,9 +82,9 @@ export default function EditCourse() {
             style={{ marginBottom: "5px", marginTop: "20px" }}
           >
             {image ? (
-              <img src={image} height={"100vh"} />
+              <img src={image} height={"100vh"} alt="Lesson Img"/>
             ) : (
-              <img src={upload} height={"100vh"} />
+              <img src={upload} height={"100vh"} alt="Lesson Img"/>
             )}
             <br />
             Upload Image

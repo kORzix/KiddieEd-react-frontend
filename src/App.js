@@ -11,10 +11,10 @@ import Worksheet from "./pages/Worksheets";
 import Login from "./pages/LoginPage";
 import Profile from "./pages/More/Profile";
 
-import AddCourse from "./pages/lesson/AddCourse";
-import ViewAll from "./pages/lesson/ViewAll";
-import ViewCourse from "./pages/lesson/ViewCourse";
-import EditCourse from "./pages/lesson/EditCourse";
+import AddLesson from "./pages/lesson/AddLesson";
+import ViewLessons from "./pages/lesson/ViewLessons";
+import ViewLesson from "./pages/lesson/ViewLesson";
+import EditLesson from "./pages/lesson/EditLesson";
 
 
 import './index.css';
@@ -37,10 +37,10 @@ function App() {
           <Route path='/more' exact element={<More />} />
           <Route path='/profile' exact element={<Profile />} />
 
-          <Route path='/addlesson' exact element={<AddCourse />} />
-          <Route path='/lessons' exact element={<ViewAll />} />
-          <Route path='/viewlesson/:id' exact element={<ViewCourse />} />
-          <Route path='/editlesson/:id' exact element={<EditCourse />} />
+          <Route path='/lesson/add' exact element={<AddLesson />} />
+          <Route path='/lessons' exact element={<ViewLessons />} />
+          <Route path='/lesson/view/:id' exact element={<ViewLesson />} />
+          <Route path='/lesson/edit/:id' exact element={<EditLesson />} />
 
           {/* <Route path='/article/:name' element={<Article />} /> */}
           {/* <Route path='*' element={<NotFound />} /> */}
