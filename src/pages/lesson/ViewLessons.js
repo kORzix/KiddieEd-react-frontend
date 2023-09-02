@@ -11,40 +11,51 @@ export default function ViewLessons() {
   }, []);
 
   function retrieveLessons() {
-    axios.get(PROXY+"/lessons").then((res) => {
-      if (res.data.success) {
-        setLessons(res.data.existingLessons);
-      }
-    });
+    setIsLoading(true);
+    axios
+      .get(PROXY + "/lessons")
+      .then((res) => {
+        if (res.data.success) {
+          setLessons(res.data.existingLessons);
+        }
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   const onDelete = (id) => {
-    axios.delete(PROXY+`/lesson/delete/${id}`).then((res) => {
+    axios.delete(PROXY + `/lesson/delete/${id}`).then((res) => {
       retrieveLessons();
       alert("Delete Successfully");
     });
   };
 
-  function filterData(lessons,searchKey){
-    const result = lessons.filter((lesson)=>
-    lesson.lessonName.toLowerCase().includes(searchKey)||
-    lesson.payment.toLowerCase().includes(searchKey)||
-    lesson.category.toLowerCase().includes(searchKey)
-    )
-    setLessons(result)
+  function filterData(lessons, searchKey) {
+    searchKey=searchKey.toLowerCase();
+    const result = lessons.filter(
+      (lesson) =>
+        lesson.lessonName.toLowerCase().includes(searchKey) ||
+        lesson.payment.toLowerCase().includes(searchKey) ||
+        lesson.category.toLowerCase().includes(searchKey)
+    );
+    setLessons(result);
   }
 
-  const handleSearchArea = (e)=>{
+  const handleSearchArea = (e) => {
     const searchKey = e.currentTarget.value;
-    setIsLoading(true)
-    axios.get(PROXY+"/lessons").then(res =>{
-      if(res.data.success){
-        filterData(res.data.existingLessons,searchKey);
-      }
-    }).finally(() => {
-      setIsLoading(false)
-    });
-  }
+    setIsLoading(true);
+    axios
+      .get(PROXY + "/lessons")
+      .then((res) => {
+        if (res.data.success) {
+          filterData(res.data.existingLessons, searchKey);
+        }
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
 
   return (
     <div className="container">
@@ -74,46 +85,59 @@ export default function ViewLessons() {
           </tr>
         </thead>
         <tbody>
-          {isLoading ? 'loading...' : lessons.map((lessons, index) => (
-            <tr key={index}>
-              <th scope="row">{index + 1}</th>
-              <td>
-                <a
-                  href={`/lesson/view/${lessons._id}`}
-                  style={{ textDecoration: "none", color:'black',fontWeight:'bold'}}
-                >
-                  {lessons.lessonName}
-                </a>
-              </td>
-              {/* <td>{lessons.image}</td> */}
-              <td><img src={PROXY+`/images/`+lessons.image} width={'80vh'} alt="Lesson Img"/></td>
-              <td>{lessons.payment}</td>
-              <td>{lessons.category}</td>
-              <td>
-                <a
-                  className="btn btn-warning"
-                  href={`/lesson/edit/${lessons._id}`}
-                >
-                  <i className="fas fa-edit"></i>&nbsp;Edit
-                </a>
-                &nbsp;
-                <a
-                  className="btn btn-danger"
-                  href="#"
-                  onClick={() => onDelete(lessons._id)}
-                >
-                  <i className="far fa-trash-alt"></i>&nbsp;Delete
-                </a>
-              </td>
-            </tr>
-          ))}
+          {isLoading
+            ? (<div className="p-5">Loading...</div>)
+            : lessons.map((lessons, index) => (
+                <tr key={index}>
+                  <th scope="row">{index + 1}</th>
+                  <td>
+                    <a
+                      href={`/lesson/view/${lessons._id}`}
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {lessons.lessonName}
+                    </a>
+                  </td>
+                  {/* <td>{lessons.image}</td> */}
+                  <td>
+                    <img
+                      src={PROXY + `/images/` + lessons.image}
+                      width={"80vh"}
+                      alt="Lesson Img"
+                    />
+                  </td>
+                  <td>{lessons.payment}</td>
+                  <td>{lessons.category}</td>
+                  <td>
+                    <a
+                      className="btn btn-warning"
+                      href={`/lesson/edit/${lessons._id}`}
+                    >
+                      <i className="fas fa-edit"></i>&nbsp;Edit
+                    </a>
+                    &nbsp;
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => onDelete(lessons._id)}
+                    >
+                      <i className="far fa-trash-alt"></i>&nbsp;Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
         </tbody>
       </table>
-      <button className="btn btn-success">
-        <a href="/lesson/add" style={{ textDecoration: "none", color: "white" }}>
-          Add New Lesson
-        </a>
-      </button>
+      <a
+        href="/lesson/add"
+        className="btn btn-success"
+        style={{ textDecoration: "none", color: "white" }}
+      >
+        Add New Lesson
+      </a>
     </div>
   );
 }

@@ -10,6 +10,7 @@ export default function AddLesson() {
   const [category, setCategory] = useState({});
 
   const onSubmit = (e) => {
+    e.preventDefault();
     const formdata = new FormData();
     formdata.append("file", file);
     formdata.append("lessonName", lessonName);
@@ -21,14 +22,13 @@ export default function AddLesson() {
 
     axios.post(PROXY+"/lesson/add", formdata).then((res) => {
       if (res.data.success) {
-        // console.log(res.data.success);
         setFile({});
         setLessonName({});
         setPayment({});
         setCategory({});
-      }      
+        alert("Lesson added successfully")
+      }    
     });
-    alert("Lesson added successfully")
   };
 
   return (
