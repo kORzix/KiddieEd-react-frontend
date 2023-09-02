@@ -11,10 +11,10 @@ import Worksheet from "./pages/Worksheets";
 import Login from "./pages/LoginPage";
 import Profile from "./pages/More/Profile";
 
-import AddLesson from "./pages/lesson/AddLesson";
-import ViewLessons from "./pages/lesson/ViewLessons";
-import ViewLesson from "./pages/lesson/ViewLesson";
-import EditLesson from "./pages/lesson/EditLesson";
+import AddPlan from "./pages/lesson-plans/AddPlan";
+import ViewPlans from "./pages/lesson-plans/ViewPlans";
+import ViewPlan from "./pages/lesson-plans/ViewPlan";
+import EditPlan from "./pages/lesson-plans/EditPlan";
 
 
 import './index.css';
@@ -37,17 +37,16 @@ function App() {
           <Route path='/more' exact element={<More />} />
           <Route path='/profile' exact element={<Profile />} />
 
-          <Route path='/lesson/add' exact element={<AddLesson />} />
-          <Route path='/lessons' exact element={<ViewLessons />} />
-          <Route path='/lesson/view/:id' exact element={<ViewLesson />} />
-          <Route path='/lesson/edit/:id' exact element={<EditLesson />} />
+          <Route path='/lesson-plans/add' exact element={<AddPlan />} />
+          <Route path='/lesson-plans' exact element={<ViewPlans />} />
+          <Route path='/lesson-plans/view/:id' exact element={<ViewPlan />} />
+          <Route path='/lesson-plans/edit/:id' exact element={<EditPlan />} />
 
           {/* <Route path='/article/:name' element={<Article />} /> */}
           {/* <Route path='*' element={<NotFound />} /> */}
         </Routes>
       {/* </div> */}
     </BrowserRouter>
-    //add test comment from buddhika
   );
 }
 
