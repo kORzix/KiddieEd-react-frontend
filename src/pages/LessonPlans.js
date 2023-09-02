@@ -33,7 +33,6 @@ function LessonPlans() {
 
         {/* Cards */}
         <div className="row d-flex justify-content-center">
-          
           {/* Card Dynamic*/}
           {plans.map((plans, index) => (
             <Card
