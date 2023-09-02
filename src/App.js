@@ -16,6 +16,10 @@ import ViewPlans from "./pages/lesson-plans/ViewPlans";
 import ViewPlan from "./pages/lesson-plans/ViewPlan";
 import EditPlan from "./pages/lesson-plans/EditPlan";
 
+import AddSheet from "./pages/worksheets/AddSheet";
+import ViewSheets from "./pages/worksheets/ViewSheets";
+import ViewSheet from "./pages/worksheets/ViewSheet";
+import EditSheet from "./pages/worksheets/EditSheet";
 
 import './index.css';
 
@@ -41,6 +45,11 @@ function App() {
           <Route path='/lesson-plans' exact element={<ViewPlans />} />
           <Route path='/lesson-plans/view/:id' exact element={<ViewPlan />} />
           <Route path='/lesson-plans/edit/:id' exact element={<EditPlan />} />
+
+          <Route path='/worksheets/add' exact element={<AddSheet />} />
+          <Route path='/worksheets' exact element={<ViewSheets />} />
+          <Route path='/worksheets/view/:id' exact element={<ViewSheet />} />
+          <Route path='/worksheets/edit/:id' exact element={<EditSheet />} />
 
           {/* <Route path='/article/:name' element={<Article />} /> */}
           {/* <Route path='*' element={<NotFound />} /> */}
