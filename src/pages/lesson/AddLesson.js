@@ -42,7 +42,6 @@ export default function AddLesson() {
             className="form-control"
             name="lessonName"
             placeholder="Enter Lesson Name"
-            // value={lessonName}
             onChange={(e) => setLessonName(e.target.value)}
           />
         </div>
@@ -54,7 +53,6 @@ export default function AddLesson() {
             className="form-control"
             name="file"
             placeholder="Upload a Image"
-            // value={file}
             onChange={(e) => setFile(e.target.files[0])}
           />
           <label
@@ -70,7 +68,6 @@ export default function AddLesson() {
             Upload Image
           </label>
         </div>
-        {/* {file && <img src={URL.createObjectURL(file)} height={"100vh"} />} */}
 
         <div className="form-group" style={{ marginBottom: "15px" }}>
           <label style={{ marginBottom: "5px" }}>Payement Type</label>
@@ -79,7 +76,6 @@ export default function AddLesson() {
             className="form-control"
             name="payment"
             placeholder="Enter Payement Type"
-            // value={payment}
             onChange={(e) => setPayment(e.target.value)}
           />
         </div>
@@ -90,7 +86,6 @@ export default function AddLesson() {
             className="form-control"
             name="category"
             placeholder="Enter Lesson Category"
-            // value={category}
             onChange={(e) => setCategory(e.target.value)}
           />
         </div>

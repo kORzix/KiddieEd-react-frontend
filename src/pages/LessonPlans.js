@@ -13,6 +13,7 @@ import TopNavBar from "../components/topnavbar";
 import { PROXY } from "../configs";
 import React from "react";
 import axios from "axios";
+import Card from "../components/Card";
 
 function LessonPlans() {
   const [lessons, setLessons] = React.useState([]);
@@ -43,26 +44,12 @@ function LessonPlans() {
         <div className="row d-flex justify-content-center">
           {/* Card Dynamic*/}
           {lessons.map((lessons, index) => (
-            <div
-              className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12"
-              key={index}
-            >
-              <div className="card">
-                <div className="card-img">
-                  <img
-                    src={PROXY + `/images/` + lessons.image}
-                    className="img-fluid mb-5 mt-5"
-                    alt="..."
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">{lessons.lessonName}</h5>
-                  <Link to={`/lesson/view/${lessons._id}`} className="btn">
-                    Start
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <Card
+              index={index}
+              image={lessons.image}
+              name={lessons.lessonName}
+              id={lessons._id}
+            />
           ))}
 
           {/* Card 1 */}
