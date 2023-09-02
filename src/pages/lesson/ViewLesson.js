@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { PROXY } from "../../configs";
 
-export default function ViewCourse() {
+export default function ViewLesson() {
   const id = useParams().id;
   const [lesson, setLesson] = React.useState({
     lessonName: "",
@@ -12,14 +13,14 @@ export default function ViewCourse() {
   });
 
   React.useEffect(() => {
-    axios.get(`http://localhost:8000/lesson/${id}`).then((res) => {
+    axios.get(PROXY+`/lesson/${id}`).then((res) => {
       if (res.data.success) {
         setLesson(res.data.lesson);
       }
     });
   }, [id]);
 
-  console.log(lesson);
+  // console.log(lesson);
 
   const { lessonName, image, payment, category } = lesson;
   return (
@@ -29,7 +30,7 @@ export default function ViewCourse() {
 
       <dl className="row">
         <dt className="col-sm-3">Image</dt>
-        <dd className="col-sm-9">{image}</dd>
+        <dd className="col-sm-9"><img src={PROXY+`/images/`+image} width={'80vh'} alt="Lesson Img"/></dd>
 
         <dt className="col-sm-3">Payment</dt>
         <dd className="col-sm-9">{payment}</dd>
