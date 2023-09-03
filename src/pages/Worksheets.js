@@ -32,14 +32,15 @@ function Worksheet() {
 
         <h3 className="mt-4 mb-5">Worksheets</h3>
 
-        <div class="row d-flex justify-content-center">
+        <div className="row d-flex justify-content-center">
           {/* Card Dynamic*/}
           {sheets.map((sheets, index) => (
             <Card
-              index={index}
+            key={index}
               image={sheets.image}
               name={sheets.sheetName}
               id={sheets._id}
+              type ={'worksheets'}
             />
           ))}
         </div>
