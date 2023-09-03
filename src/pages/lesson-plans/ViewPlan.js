@@ -3,34 +3,34 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { PROXY } from "../../configs";
 
-export default function ViewLesson() {
+export default function ViewPlan() {
   const id = useParams().id;
-  const [lesson, setLesson] = React.useState({
-    lessonName: "",
+  const [plan, setPlan] = React.useState({
+    planName: "",
     image: "",
     payment: "",
     category: "",
   });
 
   React.useEffect(() => {
-    axios.get(PROXY+`/lesson/${id}`).then((res) => {
+    axios.get(PROXY+`/lesson-plans/${id}`).then((res) => {
       if (res.data.success) {
-        setLesson(res.data.lesson);
+        setPlan(res.data.plan);
       }
     });
   }, [id]);
 
-  // console.log(lesson);
+  // console.log(plan);
 
-  const { lessonName, image, payment, category } = lesson;
+  const { planName, image, payment, category } = plan;
   return (
     <div style={{ marginTop: "20px" }}>
-      <h4>{lessonName}</h4>
+      <h4>{planName}</h4>
       <hr />
 
       <dl className="row">
         <dt className="col-sm-3">Image</dt>
-        <dd className="col-sm-9"><img src={PROXY+`/images/`+image} width={'80vh'} alt="Lesson Img"/></dd>
+        <dd className="col-sm-9"><img src={PROXY+`/images/`+image} width={'80vh'} alt="Plan Img"/></dd>
 
         <dt className="col-sm-3">Payment</dt>
         <dd className="col-sm-9">{payment}</dd>

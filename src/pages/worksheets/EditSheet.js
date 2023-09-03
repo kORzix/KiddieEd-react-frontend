@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 import upload from "../../images/upload.jpg";
 import { PROXY } from "../../configs";
 
-export default function EditLesson() {
+export default function EditSheet() {
   const id = useParams().id;
   const [file, setFile] = useState();  
   const [image, setImage] = useState();
-  const [lessonName, setLessonName] = useState({});
+  const [sheetName, setSheetName] = useState({});
   const [payment, setPayment] = useState({});
   const [category, setCategory] = useState({});
 
@@ -18,12 +18,12 @@ export default function EditLesson() {
   };
 
   React.useEffect(() => {
-    axios.get(PROXY+`/lesson/${id}`).then((res) => {
+    axios.get(PROXY+`/worksheets/${id}`).then((res) => {
       if (res.data.success) {
-        setImage(PROXY+`/images/` + res.data.lesson.image);
-        setLessonName(res.data.lesson.lessonName);
-        setPayment(res.data.lesson.payment);
-        setCategory(res.data.lesson.category);
+        setImage(PROXY+`/images/` + res.data.sheet.image);
+        setSheetName(res.data.sheet.sheetName);
+        setPayment(res.data.sheet.payment);
+        setCategory(res.data.sheet.category);
       }
     });
   }, [id]);
@@ -32,20 +32,20 @@ export default function EditLesson() {
     const formdata = new FormData();
 
     formdata.append("file", file);
-    formdata.append("lessonName", lessonName);
+    formdata.append("sheetName", sheetName);
     formdata.append("payment", payment);
     formdata.append("category", category);
 
     // console.log(formdata);
 
     axios
-      .put(PROXY+`/lesson/update/${id}`, formdata)
+      .put(PROXY+`/worksheets/update/${id}`, formdata)
       .then((res) => {
         if (res.data.success) {
           console.log(res.data.success);
           setFile({});
           setImage({});
-          setLessonName({});
+          setSheetName({});
           setPayment({});
           setCategory({});
         }
@@ -54,16 +54,17 @@ export default function EditLesson() {
 
   return (
     <div className="col-md-8 mt-4 mx-auto">
-      <h1 className="h3 mb-3 font-weight-normal">Edit Lesson</h1>
+      <h1 className="h3 mb-3 font-weight-normal">Edit Sheet</h1>
       <form className="needs-validation" noValidate>
         <div className="form-group" style={{ marginBottom: "15px" }}>
-          <label style={{ marginBottom: "5px" }}>Lesson Name</label>
+          <label style={{ marginBottom: "5px" }}>Sheet Name</label>
           <input
             type="text"
             className="form-control"
-            name="lessonName"
-            value={lessonName}
-            onChange={(e) => setLessonName(e.target.value)}
+            name="sheetName"
+            value={sheetName}
+            required
+            onChange={(e) => setSheetName(e.target.value)}
           />
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
@@ -74,7 +75,6 @@ export default function EditLesson() {
             type="file"
             className="form-control"
             name="image"
-            // value={lesson.image}
             onChange={handleInputChange} //file = URL.createObjectURL(file)
           />
           <label
@@ -82,14 +82,13 @@ export default function EditLesson() {
             style={{ marginBottom: "5px", marginTop: "20px" }}
           >
             {image ? (
-              <img src={image} height={"100vh"} alt="Lesson Img"/>
+              <img src={image} height={"100vh"} alt="Sheet Img"/>
             ) : (
-              <img src={upload} height={"100vh"} alt="Lesson Img"/>
+              <img src={upload} height={"100vh"} alt="Sheet Img"/>
             )}
             <br />
             Upload Image
           </label>
-          {/* <img src={`http://localhost:8000/images/`+lesson.image} width={'80vh'}/> */}
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
           <label style={{ marginBottom: "5px" }}>Payment</label>
@@ -98,6 +97,7 @@ export default function EditLesson() {
             className="form-control"
             name="payment"
             value={payment}
+            required
             onChange={(e) => setPayment(e.target.value)}
           />
         </div>
@@ -108,6 +108,7 @@ export default function EditLesson() {
             className="form-control"
             name="category"
             value={category}
+            required
             onChange={(e) => setCategory(e.target.value)}
           />
         </div>
