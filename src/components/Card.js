@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { PROXY } from "../configs";
 
-const Card = ({ index, image, name, id }) => {
+const Card = ({ image, name, id, type }) => {
   return (
-    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12" key={index}>
+    <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12">
       <div className="card">
         <div className="card-img">
           <img
@@ -15,7 +15,7 @@ const Card = ({ index, image, name, id }) => {
         </div>
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
-          <Link to={`/lesson/view/${id}`} className="btn">
+          <Link to={`/${type}/view/${id}`} className="btn">
             Start
           </Link>
         </div>
