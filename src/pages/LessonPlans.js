@@ -36,11 +36,10 @@ function LessonPlans() {
           {/* Card Dynamic*/}
           {plans.map((plans, index) => (
             <Card
-              key={index}
+              index={index}
               image={plans.image}
               name={plans.planName}
               id={plans._id}
-              type={"lesson-plans"}
             />
           ))}
         </div>
