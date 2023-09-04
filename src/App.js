@@ -24,6 +24,8 @@ import EditSheet from "./pages/worksheets/EditSheet";
 import './index.css';
 import Eff from "./components/Eff";
 
+import Chatbot from "./components/chatbot";
+
 // Components
 // import Navbar from "./components/Navbar";
 
@@ -56,6 +58,7 @@ function App() {
           {/* <Route path='*' element={<NotFound />} /> */}
         </Routes>
       <Eff />
+      <Chatbot/>
       {/* </div> */}
     </BrowserRouter>
   );

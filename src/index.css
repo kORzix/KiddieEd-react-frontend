@@ -132,9 +132,9 @@ code {
   text-align: center;
 }
 
-.container .card-img img{
-  height: 10vh;
-}
+/* .container .card-img img{
+  width: 80%;
+} */
 
 .container .card-body{
   border-top: 1px solid #00000023;
@@ -330,3 +330,130 @@ code {
   box-shadow: 0 0 15px 0px #00000077;
   width: 50%;
 }
+
+
+
+
+/* --------------------------chat bot ------------------------------- */
+.chat-window {
+  display: none;
+  width: 300px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 50px;
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.168);
+  z-index: 1;
+}
+
+.chat-window-toggled {
+  display: grid;
+}
+
+.chat-btn{
+  padding: 30px 30px;
+  border-radius: 50px;
+  background-color: #01438b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  display: grid;
+}
+
+.chat-btn-toggled{
+  display: none;
+}
+
+.close-btn{
+  display: grid;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: gray;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.close-btn-toggled{
+  display: grid;
+}
+
+.close-btn:hover{
+  color: rgb(12, 0, 0);
+}
+
+#chat-messages {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  height: 40vh;
+  overflow: auto;
+}
+
+#chat-form {
+  display: flex;
+  align-items: center;
+}
+
+#chat-input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 50%;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #0048ff23;
+  color: #674188;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.bot-message {
+  font-family: "Roboto", sans-serif;
+  background-color: #002f9520;
+  font-size: 15px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 0px 10px 10px 10px;
+}
+
+.user-message {
+  font-family: "Nunito", sans-serif;
+  background-color: #ffffff;
+  border: 1px solid #002f9592;;
+  text-align: right;
+  font-size: 15px;
+  padding: 6px 10px;
+  display: flex;
+  border-radius: 10px 0px 10px 10px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 400px) {
+  #chat-window {
+    width: 90%;
+  }
+}
+.main-title {
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 0.5rem;
+  margin-top: 15px;
+  color: #3100a3;
+}
+
