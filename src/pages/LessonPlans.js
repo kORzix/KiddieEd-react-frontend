@@ -40,7 +40,6 @@ function LessonPlans() {
               image={plans.image}
               name={plans.planName}
               id={plans._id}
-              url={'lesson-plans'}
             />
           ))}
         </div>
