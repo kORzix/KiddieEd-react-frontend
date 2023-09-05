@@ -59,7 +59,7 @@ function AdminDashboard() {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">Guided Lessons</h5>
-                  <Link to="/button1" className="btn">Manage</Link>
+                  <Link to="/guid-lessons" className="btn">Manage</Link>
                 </div>
               </div>
             </div>

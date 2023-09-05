@@ -27,9 +27,11 @@ import './index.css';
 import Eff from "./components/Eff";
 
 
+
 import Assist from "./components/assist";
 
-import Chatbot from "./components/chatbot";
+
+
 import Addgame from "./pages/games/AddGame";
 import ViewGames from "./pages/games/ViewGames";
 import ViewGame from "./pages/games/ViewGame";
@@ -38,6 +40,7 @@ import AddLesson from "./pages/guided-lessons/AddGuided";
 import ViewLessons from "./pages/guided-lessons/ViewGuideds";
 import ViewLesson from "./pages/guided-lessons/ViewGuided";
 import EditLesson from "./pages/guided-lessons/EditGuided";
+import ChatBot from "./components/chatbot";
 
 
 // Components
@@ -86,7 +89,7 @@ function App() {
         </Routes>
         {/* <Assist/> */}
       <Eff />
-      <Chatbot/>
+      <ChatBot />
       {/* </div> */}
     </BrowserRouter>
   );
