@@ -21,8 +21,16 @@ import ViewSheets from "./pages/worksheets/ViewSheets";
 import ViewSheet from "./pages/worksheets/ViewSheet";
 import EditSheet from "./pages/worksheets/EditSheet";
 
+import Admin from "./pages/adminDashboard";
+
 import './index.css';
 import Eff from "./components/Eff";
+
+
+
+import Assist from "./components/assist";
+
+
 
 import Addgame from "./pages/games/AddGame";
 import ViewGames from "./pages/games/ViewGames";
@@ -32,7 +40,8 @@ import AddLesson from "./pages/guided-lessons/AddGuided";
 import ViewLessons from "./pages/guided-lessons/ViewGuideds";
 import ViewLesson from "./pages/guided-lessons/ViewGuided";
 import EditLesson from "./pages/guided-lessons/EditGuided";
-import ChatBot from "./components/ChatBot";
+import ChatBot from "./components/chatbot";
+
 
 // Components
 // import Navbar from "./components/Navbar";
@@ -61,6 +70,9 @@ function App() {
           <Route path='/worksheets' exact element={<ViewSheets />} />
           <Route path='/worksheets/view/:id' exact element={<ViewSheet />} />
           <Route path='/worksheets/edit/:id' exact element={<EditSheet />} />
+          <Route path='/admin' exact element={<Admin />} />
+
+
 
           <Route path='/games/add' exact element={<Addgame />} />
           <Route path='/games' exact element={<ViewGames />} />
@@ -75,6 +87,7 @@ function App() {
           {/* <Route path='/article/:name' element={<Article />} /> */}
           {/* <Route path='*' element={<NotFound />} /> */}
         </Routes>
+        {/* <Assist/> */}
       <Eff />
       <ChatBot />
       {/* </div> */}

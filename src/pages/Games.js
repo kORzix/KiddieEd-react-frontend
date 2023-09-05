@@ -1,4 +1,6 @@
+
 import loginNav from "../images/games-nav-img.png";
+
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
 import { PROXY } from "../configs";
@@ -6,6 +8,7 @@ import React from "react";
 import axios from "axios";
 
 import Card from "../components/Card";
+
 
 function Games() {
   const [games, setGames] = React.useState([]);
@@ -22,6 +25,7 @@ function Games() {
     });
   }
 
+
   return (
     <div className="App">
       <Navbar img={loginNav} />
@@ -31,6 +35,7 @@ function Games() {
         <TopNavBar />
 
         <h3 className="mt-4 mb-5">Games</h3>
+
 
         {/* Cards */}
         <div className="row d-flex justify-content-center">
@@ -42,6 +47,7 @@ function Games() {
               name={games.gameName}
               id={games._id}
               url={'games'}
+
             />
           ))}
         </div>

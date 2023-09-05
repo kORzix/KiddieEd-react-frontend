@@ -2,9 +2,11 @@ import loginNav from "../images/guided lessons-nav-img.png";
 import Card from "../components/Card";
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
+
 import { PROXY } from "../configs";
 import React from "react";
 import axios from "axios";
+
 
 function Lessons() {
   const [lessons, setLessons] = React.useState([]);
@@ -41,6 +43,7 @@ function Lessons() {
               name={lessons.lessonName}
               id={lessons._id}
               url={"guid-lessons"}
+
             />
           ))}
         </div>
