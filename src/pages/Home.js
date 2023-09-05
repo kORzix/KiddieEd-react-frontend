@@ -2,7 +2,7 @@ import loginNav from "../images/dashboard-nav-img.png";
 import img1 from "../images/dashboard-img-1.png";
 import img2 from "../images/dashboard-img-2.png";
 import img3 from "../images/dashboard-img-3.png";
-import { Link } from "react-router-dom";
+import Card from "../components/Card";
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
 
