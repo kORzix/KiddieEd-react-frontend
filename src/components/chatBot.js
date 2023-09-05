@@ -1,32 +1,15 @@
-body {
-    font-family: Arial, sans-serif;
+import * as React from "react";
+import './chatBot.css';
+
+const chatBot = () => {
+    return (
+        <div>
+            <div class="container">
+                <button class="blink-button"></button>
+                <div class="output"></div>
+            </div>
+        </div>
+    );
 }
 
-.container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.blink-button {
-    padding: 30px 30px;
-    border-radius: 50px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-}
-
-.output {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-
-@keyframes blink {
-    0%, 100% { background-color: #007bff; color: white; }
-    50% { background-color: white; color: #007bff; }
-}
+export default chatBot;
