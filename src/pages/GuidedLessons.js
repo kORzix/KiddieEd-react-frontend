@@ -50,10 +50,11 @@ function Lessons() {
               image={lessons.image}
               name={lessons.lessonName}
               id={lessons._id}
-              url={'guid-lessons'}
+              url={"guid-lessons"}
             />
           ))}
         </div>
+      </div>
     </div>
   );
 }
