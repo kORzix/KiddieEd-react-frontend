@@ -122,4 +122,13 @@
       display: none;
     }
   }
-  
+
+  @media screen and (max-width: 600px) {
+    .side-nav-container {
+      width: 10%;
+    }
+
+    .side-nav-buttons {
+      width: 280%;
+    }
+  }

@@ -41,7 +41,7 @@ const topNavbar = ({pageNo}) => {
             </div>
 
             <div className="side-nav-container">
-                <div className="side-nav-buttons" style={{margin: '0 1.5em 0 1.5em'}}>
+                <div className="side-nav-buttons" style={{margin: '0 1.5em 0 30%'}}>
                     <Link to="/worksheet" className="side-nav-button"><img className="icon" src={navBarImg.worksheet} alt="worksheet icon"/></Link>
                     <Link to="/games" className="side-nav-button"><img className="icon" src={navBarImg.game} alt="game icon" /></Link>
                     <Link to="/guided-lessons" className="side-nav-button"><img className="icon" src={navBarImg.lesson} alt="lesson icon" /></Link>
