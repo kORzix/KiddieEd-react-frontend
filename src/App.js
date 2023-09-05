@@ -40,7 +40,7 @@ import AddLesson from "./pages/guided-lessons/AddGuided";
 import ViewLessons from "./pages/guided-lessons/ViewGuideds";
 import ViewLesson from "./pages/guided-lessons/ViewGuided";
 import EditLesson from "./pages/guided-lessons/EditGuided";
-import ChatBot from "./components/chatbot";
+import ChatBot from "./components/chatBot";
 
 
 // Components
