@@ -1,7 +1,4 @@
 import loginNav from "../images/dashboard-nav-img.png";
-import img1 from "../images/dashboard-img-1.png";
-import img2 from "../images/dashboard-img-2.png";
-import img3 from "../images/dashboard-img-3.png";
 import Card from "../components/Card";
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
@@ -18,9 +15,9 @@ function Home() {
 
         {/* Cards */}
         <div className="row d-flex justify-content-center">
-          <Card index={1} image={img1} name={"Letter Quiz"} id={"/button1"} />
-          <Card index={2} image={img2} name={"Paint Bonanza"} id={"/button1"} />
-          <Card index={3} image={img3} name={"Addition"} id={"/button1"} />
+          <Card index={1} image={'file_1693933342128.png'} name={"Letter Quiz"} id={"button1"} url={'games'}/>
+          <Card index={2} image={'file_1693675766318.png'} name={"Paint Bonanza"} id={"button1"} url={'worksheets'}/>
+          <Card index={3} image={'file_1693933764201.png'} name={"Addition"} id={"button1"} url={'guid-lessons'}/>
         </div>
       </div>
     </div>

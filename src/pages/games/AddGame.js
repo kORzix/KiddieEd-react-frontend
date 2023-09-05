@@ -33,10 +33,10 @@ export default function Addgame() {
 
   return (
     <div className="col-md-8 mt-4 mx-auto">
-      <h1 className="h3 mb-3 font-weight-normal">Add New Workgame</h1>
+      <h1 className="h3 mb-3 font-weight-normal">Add New Game</h1>
       <form className="needs-validation" noValidate>
         <div className="form-group" style={{ marginBottom: "15px" }}>
-          <label style={{ marginBottom: "5px" }}>game Name</label>
+          <label style={{ marginBottom: "5px" }}>Game Name</label>
           <input
             type="text"
             className="form-control"
@@ -97,8 +97,7 @@ export default function Addgame() {
           type="submit"
           style={{ marginTop: "15px" }}
           onClick={onSubmit}
-        >
-          <i className="far fa-check-square"></i>&nbsp; Add
+        >        <i className="far fa-check-square"></i>&nbsp; Add
         </button>
       </form>
     </div>

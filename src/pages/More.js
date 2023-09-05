@@ -1,8 +1,4 @@
 import loginNav from "../images/lessons plans-nav-img.png";
-import img1 from "../images/more-img-1.png";
-import img2 from "../images/more-img-2.png";
-import img3 from "../images/more-img-3.png";
-import img4 from "../images/more-img-4.png";
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
 import Card from "../components/Card";
@@ -20,13 +16,13 @@ function More() {
         <div class="row d-flex justify-content-center mt-5">
           <Card
             index={1}
-            image={img1}
+            image={'more-img-1.png'}
             name={"Monitor Progress"}
-            id={"/button1"}
+            id={"button1"}
           />
-          <Card index={2} image={img2} name={"Premium Plans"} id={"/button1"} />
-          <Card index={3} image={img3} name={"Contact Us"} id={"/button1"} />
-          <Card index={4} image={img4} name={"Profile"} id={"/profile"} />
+          <Card index={2} image={'more-img-2.png'} name={"Premium Plans"} id={"button1"} url={'more'}/>
+          <Card index={3} image={'more-img-3.png'} name={"Contact Us"} id={"button1"} url={'more'}/>
+          <Card index={4} image={'more-img-4.png'} name={"Profile"} id={"profile"} url={'more'}/>
         </div>
       </div>
     </div>
