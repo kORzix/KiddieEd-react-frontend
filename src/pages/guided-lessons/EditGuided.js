@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 import upload from "../../images/upload.jpg";
 import { PROXY } from "../../configs";
 
-export default function EditGame() {
+export default function EditLesson() {
   const id = useParams().id;
   const [file, setFile] = useState();  
   const [image, setImage] = useState();
-  const [gameName, setGameName] = useState({});
+  const [lessonName, setLessonName] = useState({});
   const [payment, setPayment] = useState({});
   const [category, setCategory] = useState({});
 
@@ -18,12 +18,12 @@ export default function EditGame() {
   };
 
   React.useEffect(() => {
-    axios.get(PROXY+`/games/${id}`).then((res) => {
+    axios.get(PROXY+`/guid-lessons/${id}`).then((res) => {
       if (res.data.success) {
-        setImage(PROXY+`/images/` + res.data.game.image);
-        setGameName(res.data.game.gameName);
-        setPayment(res.data.game.payment);
-        setCategory(res.data.game.category);
+        setImage(PROXY+`/images/` + res.data.lesson.image);
+        setLessonName(res.data.lesson.lessonName);
+        setPayment(res.data.lesson.payment);
+        setCategory(res.data.lesson.category);
       }
     });
   }, [id]);
@@ -32,20 +32,20 @@ export default function EditGame() {
     const formdata = new FormData();
 
     formdata.append("file", file);
-    formdata.append("gameName", gameName);
+    formdata.append("lessonName", lessonName);
     formdata.append("payment", payment);
     formdata.append("category", category);
 
     // console.log(formdata);
 
     axios
-      .put(PROXY+`/games/update/${id}`, formdata)
+      .put(PROXY+`/guid-lessons/update/${id}`, formdata)
       .then((res) => {
         if (res.data.success) {
           console.log(res.data.success);
           setFile({});
           setImage({});
-          setGameName({});
+          setLessonName({});
           setPayment({});
           setCategory({});
         }
@@ -54,17 +54,17 @@ export default function EditGame() {
 
   return (
     <div className="col-md-8 mt-4 mx-auto">
-      <h1 className="h3 mb-3 font-weight-normal">Edit Game</h1>
+      <h1 className="h3 mb-3 font-weight-normal">Edit Guided Lesson</h1>
       <form className="needs-validation" noValidate>
         <div className="form-group" style={{ marginBottom: "15px" }}>
-          <label style={{ marginBottom: "5px" }}>Game Name</label>
+          <label style={{ marginBottom: "5px" }}>Lesson Name</label>
           <input
             type="text"
             className="form-control"
-            name="gameName"
-            value={gameName}
+            name="lessonName"
+            value={lessonName}
             required
-            onChange={(e) => setGameName(e.target.value)}
+            onChange={(e) => setLessonName(e.target.value)}
           />
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
@@ -82,9 +82,9 @@ export default function EditGame() {
             style={{ marginBottom: "5px", marginTop: "20px" }}
           >
             {image ? (
-              <img src={image} height={"100vh"} alt="Game Img"/>
+              <img src={image} height={"100vh"} alt="Lesson Img"/>
             ) : (
-              <img src={upload} height={"100vh"} alt="Game Img"/>
+              <img src={upload} height={"100vh"} alt="Lesson Img"/>
             )}
             <br />
             Upload Image

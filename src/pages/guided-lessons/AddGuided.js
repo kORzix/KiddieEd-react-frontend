@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import upload from "../../images/upload.jpg";
 import { PROXY } from "../../configs";
 
-export default function Addgame() {
+export default function Addlesson() {
   const [file, setFile] = useState();
-  const [gameName, setgameName] = useState({});
+  const [lessonName, setlessonName] = useState({});
   const [payment, setPayment] = useState({});
   const [category, setCategory] = useState({});
 
@@ -13,37 +13,37 @@ export default function Addgame() {
     // e.preventDefault();
     const formdata = new FormData();
     formdata.append("file", file);
-    formdata.append("gameName", gameName);
+    formdata.append("lessonName", lessonName);
     formdata.append("payment", payment);
     formdata.append("category", category);
     
 
     console.log(formdata);
 
-    axios.post(PROXY+"/games/add", formdata).then((res) => {
+    axios.post(PROXY+"/guid-lessons/add", formdata).then((res) => {
       if (res.data.success) {
       setFile({});
-        setgameName({});
+        setlessonName({});
         setPayment({});
         setCategory({});
-        alert("Game added successfully")
+        alert("Lesson added successfully")
       }    
     });
   };
 
   return (
     <div className="col-md-8 mt-4 mx-auto">
-      <h1 className="h3 mb-3 font-weight-normal">Add New Workgame</h1>
+      <h1 className="h3 mb-3 font-weight-normal">Add New Guided Lesson</h1>
       <form className="needs-validation" noValidate>
         <div className="form-group" style={{ marginBottom: "15px" }}>
-          <label style={{ marginBottom: "5px" }}>game Name</label>
+          <label style={{ marginBottom: "5px" }}>lesson Name</label>
           <input
             type="text"
             className="form-control"
-            name="gameName"
-            placeholder="Enter Game Name"
+            name="lessonName"
+            placeholder="Enter Lesson Name"
             required
-            onChange={(e) => setgameName(e.target.value)}
+            onChange={(e) => setlessonName(e.target.value)}
           />
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
@@ -61,9 +61,9 @@ export default function Addgame() {
             style={{ marginBottom: "5px", marginTop: "20px" }}
           >
             {file ? (
-              <img src={URL.createObjectURL(file)} height={"100vh"} alt="Game Img"/>
+              <img src={URL.createObjectURL(file)} height={"100vh"} alt="Lesson Img"/>
             ) : (
-              <img src={upload} height={"100vh"} alt="Game Img"/>
+              <img src={upload} height={"100vh"} alt="Lesson Img"/>
             )}
             <br />
             Upload Image
@@ -82,12 +82,12 @@ export default function Addgame() {
           />
         </div>
         <div className="form-group" style={{ marginBottom: "15px" }}>
-          <label style={{ marginBottom: "5px" }}>Game Category</label>
+          <label style={{ marginBottom: "5px" }}>Lesson Category</label>
           <input
             type="text"
             className="form-control"
             name="category"
-            placeholder="Enter Game Category"
+            placeholder="Enter Lesson Category"
             required
             onChange={(e) => setCategory(e.target.value)}
           />
