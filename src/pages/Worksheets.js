@@ -26,7 +26,7 @@ function Worksheet() {
 
       {/* Nav bar in the container */}
       <div className="container p-5 mb-5" style={{ width: "70%" }}>
-        <TopNavBar />
+        <TopNavBar pageNo={'worksheets'} />
 
         <h3 className="mt-4 mb-5">Worksheets</h3>
 

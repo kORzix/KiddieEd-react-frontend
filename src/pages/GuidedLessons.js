@@ -43,7 +43,6 @@ function Lessons() {
             />
           ))}
         </div>
-      </div>
     </div>
   );
 }

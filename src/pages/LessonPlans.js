@@ -27,7 +27,7 @@ function LessonPlans() {
 
       {/* Nav bar in the container */}
       <div className="container p-5 mb-5" style={{ width: "70%" }}>
-        <TopNavBar />
+        <TopNavBar pageNo={'lessons-plans'} />
 
         <h3 className="mt-4 mb-5">Lessons Plans</h3>
 
