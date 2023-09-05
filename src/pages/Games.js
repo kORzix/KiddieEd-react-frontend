@@ -9,7 +9,6 @@ import img7 from "../images/games-img-7.png";
 import img8 from "../images/games-img-8.png";
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
-import loginNav2 from "../images/lessons plans-nav-img.png";
 import { PROXY } from "../configs";
 import React from "react";
 import axios from "axios";
