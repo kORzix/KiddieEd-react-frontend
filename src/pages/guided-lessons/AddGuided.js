@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import upload from "../../images/upload.jpg";
 import { PROXY } from "../../configs";
 
-export default function Addlesson() {
+export default function AddLesson() {
   const [file, setFile] = useState();
   const [lessonName, setlessonName] = useState({});
   const [payment, setPayment] = useState({});
