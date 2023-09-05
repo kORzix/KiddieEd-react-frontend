@@ -21,8 +21,12 @@ import ViewSheets from "./pages/worksheets/ViewSheets";
 import ViewSheet from "./pages/worksheets/ViewSheet";
 import EditSheet from "./pages/worksheets/EditSheet";
 
+import Admin from "./pages/adminDashboard";
+
 import './index.css';
 import Eff from "./components/Eff";
+
+import Assist from "./components/assist";
 
 // Components
 // import Navbar from "./components/Navbar";
@@ -51,10 +55,14 @@ function App() {
           <Route path='/worksheets' exact element={<ViewSheets />} />
           <Route path='/worksheets/view/:id' exact element={<ViewSheet />} />
           <Route path='/worksheets/edit/:id' exact element={<EditSheet />} />
+          <Route path='/admin' exact element={<Admin />} />
+
+
 
           {/* <Route path='/article/:name' element={<Article />} /> */}
           {/* <Route path='*' element={<NotFound />} /> */}
         </Routes>
+        {/* <Assist/> */}
       <Eff />
       {/* </div> */}
     </BrowserRouter>

@@ -9,6 +9,7 @@ import TopNavBar from '../components/topnavbar'
 function Home() {
   return (
     <div className="App">
+      
         <Navbar img={loginNav} />
 
         <div className="container p-5 mb-5" style={{width: '70%'}}>
