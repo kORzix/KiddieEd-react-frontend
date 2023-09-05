@@ -25,6 +25,14 @@ import './index.css';
 import Eff from "./components/Eff";
 
 import Chatbot from "./components/chatbot";
+import Addgame from "./pages/games/AddGame";
+import ViewGames from "./pages/games/ViewGames";
+import ViewGame from "./pages/games/ViewGame";
+import EditGame from "./pages/games/EditGame";
+import AddLesson from "./pages/guided-lessons/AddGuided";
+import ViewLessons from "./pages/guided-lessons/ViewGuideds";
+import ViewLesson from "./pages/guided-lessons/ViewGuided";
+import EditLesson from "./pages/guided-lessons/EditGuided";
 
 // Components
 // import Navbar from "./components/Navbar";
@@ -38,7 +46,7 @@ function App() {
           <Route path='/login' exact element={<Login />} />
           <Route path='/register' exact element={<Register />} />
           <Route path='/worksheet' exact element={<Worksheet />} />
-          <Route path='/games' exact element={<Games />} />
+          <Route path='/game' exact element={<Games />} />
           <Route path='/guided-lessons' exact element={<GuidedLessons />} />
           <Route path='/lessons-plans' exact element={<LessonPlans />} />
           <Route path='/more' exact element={<More />} />
@@ -53,6 +61,16 @@ function App() {
           <Route path='/worksheets' exact element={<ViewSheets />} />
           <Route path='/worksheets/view/:id' exact element={<ViewSheet />} />
           <Route path='/worksheets/edit/:id' exact element={<EditSheet />} />
+
+          <Route path='/games/add' exact element={<Addgame />} />
+          <Route path='/games' exact element={<ViewGames />} />
+          <Route path='/games/view/:id' exact element={<ViewGame />} />
+          <Route path='/games/edit/:id' exact element={<EditGame />} />
+
+          <Route path='/guid-lessons/add' exact element={<AddLesson />} />
+          <Route path='/guid-lessons' exact element={<ViewLessons />} />
+          <Route path='/guid-lessons/view/:id' exact element={<ViewLesson />} />
+          <Route path='/guid-lessons/edit/:id' exact element={<EditLesson />} />
 
           {/* <Route path='/article/:name' element={<Article />} /> */}
           {/* <Route path='*' element={<NotFound />} /> */}

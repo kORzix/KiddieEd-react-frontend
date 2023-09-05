@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Config from "../config";
+import { API } from "../configs";
 
 function chatToggle() {
   var y = document.getElementById("chat");
@@ -50,7 +50,7 @@ function chat() {
   const form = document.getElementById("chat-form");
   const input = document.getElementById("chat-input");
   const messages = document.getElementById("chat-messages");
-  const apiKey = Config.API;
+  const apiKey = API;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();

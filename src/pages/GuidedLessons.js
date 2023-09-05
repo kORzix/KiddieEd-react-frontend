@@ -8,10 +8,29 @@ import img6 from "../images/guided lessons-img-6.png";
 import img7 from "../images/guided lessons-img-7.png";
 import img8 from "../images/guided lessons-img-8.png";
 import Card from "../components/Card";
+
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
+import { PROXY } from "../configs";
+import React from "react";
+import axios from "axios";
+import Card from "../components/Card";
 
-function GuidedLessons() {
+function Lessons() {
+  const [gessons, setLessons] = React.useState([]);
+
+  React.useEffect(() => {
+    retrieveLessons();
+  }, []);
+
+  function retrieveLessons() {
+    axios.get(PROXY + "/guid-lessons").then((res) => {
+      if (res.data.success) {
+        setLessons(res.data.existingLessons);
+      }
+    });
+  }
+
   return (
     <div className="App">
       <Navbar img={loginNav} />
@@ -20,22 +39,22 @@ function GuidedLessons() {
       <div className="container p-5 mb-5" style={{ width: "70%" }}>
         <TopNavBar />
 
-        <h3 className="mt-4 mb-5">Guided Lessons</h3>
+        <h3 className="mt-4 mb-5">Lessons</h3>
 
         {/* Cards */}
         <div className="row d-flex justify-content-center">
-          <Card index={1} image={img1} name={"Addition"} id={"/button1"} />
-          <Card index={2} image={img2} name={"Famous Places"} id={"/button1"} />
-          <Card index={3} image={img3} name={"Geometry"} id={"/button1"} />
-          <Card index={4} image={img4} name={"Vegetables"} id={"/button1"} />
-          <Card index={5} image={img5} name={"Letters"} id={"/button1"} />
-          <Card index={6} image={img6} name={"Space"} id={"/button1"} />
-          <Card index={7} image={img7} name={"Fruits"} id={"/button1"} />
-          <Card index={8} image={img8} name={"Animals"} id={"/button1"} />
+          {/* Card Dynamic*/}
+          {gessons.map((gessons, index) => (
+            <Card
+              index={index}
+              image={gessons.image}
+              name={gessons.planName}
+              id={gessons._id}
+            />
+          ))}
         </div>
-      </div>
     </div>
   );
 }
 
-export default GuidedLessons;
+export default Lessons;

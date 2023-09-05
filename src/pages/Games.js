@@ -9,9 +9,27 @@ import img7 from "../images/games-img-7.png";
 import img8 from "../images/games-img-8.png";
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
+import { PROXY } from "../configs";
+import React from "react";
+import axios from "axios";
+
 import Card from "../components/Card";
 
 function Games() {
+  const [games, setGames] = React.useState([]);
+
+  React.useEffect(() => {
+    retrieveGames();
+  }, []);
+
+  function retrieveGames() {
+    axios.get(PROXY + "/games").then((res) => {
+      if (res.data.success) {
+        setGames(res.data.existingGames);
+      }
+    });
+  }
+
   return (
     <div className="App">
       <Navbar img={loginNav} />
@@ -19,43 +37,20 @@ function Games() {
       {/* Nav bar in the container */}
       <div className="container p-5 mb-5" style={{ width: "70%" }}>
         <TopNavBar />
+
         <h3 className="mt-4 mb-5">Games</h3>
 
         {/* Cards */}
         <div className="row d-flex justify-content-center">
-          <Card index={1} image={img1} name={"Letter Quiz"} id={"/button1"} />
-          <Card
-            index={2}
-            image={img2}
-            name={"Match the Fruit"}
-            id={"/button1"}
-          />
-          <Card
-            index={3}
-            image={img3}
-            name={"Science Trivia"}
-            id={"/button1"}
-          />
-          <Card
-            index={4}
-            image={img4}
-            name={"Guess the Country"}
-            id={"/button1"}
-          />
-          <Card
-            index={5}
-            image={img5}
-            name={"Letter Matcher"}
-            id={"/button1"}
-          />
-          <Card index={6} image={img6} name={"Toy Saga"} id={"/button1"} />
-          <Card
-            index={7}
-            image={img7}
-            name={"Ski Letter Jumper"}
-            id={"/button1"}
-          />
-          <Card index={8} image={img8} name={"Shape Picker"} id={"/button1"} />
+          {/* Card Dynamic*/}
+          {games.map((games, index) => (
+            <Card
+              index={index}
+              image={games.image}
+              name={games.planName}
+              id={games._id}
+            />
+          ))}
         </div>
       </div>
     </div>

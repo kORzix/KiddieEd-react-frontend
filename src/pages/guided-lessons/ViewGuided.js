@@ -3,34 +3,34 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { PROXY } from "../../configs";
 
-export default function ViewGame() {
+export default function ViewLesson() {
   const id = useParams().id;
-  const [game, setGame] = React.useState({
-    gameName: "",
+  const [lesson, setLesson] = React.useState({
+    lessonName: "",
     image: "",
     payment: "",
     category: "",
   });
 
   React.useEffect(() => {
-    axios.get(PROXY+`/games/${id}`).then((res) => {
+    axios.get(PROXY+`/guid-lessons/${id}`).then((res) => {
       if (res.data.success) {
-        setGame(res.data.game);
+        setLesson(res.data.lesson);
       }
     });
   }, [id]);
 
-  // console.log(game);
+  // console.log(lesson);
 
-  const { gameName, image, payment, category } = game;
+  const { lessonName, image, payment, category } = lesson;
   return (
     <div style={{ marginTop: "20px" }}>
-      <h4>{gameName}</h4>
+      <h4>{lessonName}</h4>
       <hr />
 
       <dl className="row">
         <dt className="col-sm-3">Image</dt>
-        <dd className="col-sm-9"><img src={PROXY+`/images/`+image} width={'80vh'} alt="Game Img"/></dd>
+        <dd className="col-sm-9"><img src={PROXY+`/images/`+image} width={'80vh'} alt="Lesson Img"/></dd>
 
         <dt className="col-sm-3">Payment</dt>
         <dd className="col-sm-9">{payment}</dd>
