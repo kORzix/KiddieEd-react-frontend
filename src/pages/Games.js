@@ -7,9 +7,9 @@ import img5 from "../images/games-img-5.png";
 import img6 from "../images/games-img-6.png";
 import img7 from "../images/games-img-7.png";
 import img8 from "../images/games-img-8.png";
-import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
+import Card from "../components/Card";
 
 function Games() {
   return (
