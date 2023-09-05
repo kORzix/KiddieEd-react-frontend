@@ -105,7 +105,7 @@ export default function ViewLessons() {
                   {/* <td>{lessons.image}</td> */}
                   <td>
                     <img
-                      src={PROXY + `/guid-lessons/` + lessons.image}
+                      src={PROXY + `/images/` + lessons.image}
                       width={"80vh"}
                       alt="Lesson Img"
                     />

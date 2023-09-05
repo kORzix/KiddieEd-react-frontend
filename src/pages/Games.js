@@ -47,8 +47,9 @@ function Games() {
             <Card
               index={index}
               image={games.image}
-              name={games.planName}
+              name={games.gameName}
               id={games._id}
+              url={'games'}
             />
           ))}
         </div>

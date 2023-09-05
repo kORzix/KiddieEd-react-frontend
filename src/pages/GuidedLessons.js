@@ -17,7 +17,7 @@ import axios from "axios";
 import Card from "../components/Card";
 
 function Lessons() {
-  const [gessons, setLessons] = React.useState([]);
+  const [lessons, setLessons] = React.useState([]);
 
   React.useEffect(() => {
     retrieveLessons();
@@ -44,12 +44,13 @@ function Lessons() {
         {/* Cards */}
         <div className="row d-flex justify-content-center">
           {/* Card Dynamic*/}
-          {gessons.map((gessons, index) => (
+          {lessons.map((lessons, index) => (
             <Card
               index={index}
-              image={gessons.image}
-              name={gessons.planName}
-              id={gessons._id}
+              image={lessons.image}
+              name={lessons.lessonName}
+              id={lessons._id}
+              url={'guid-lessons'}
             />
           ))}
         </div>

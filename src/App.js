@@ -50,7 +50,7 @@ function App() {
           <Route path='/guided-lessons' exact element={<GuidedLessons />} />
           <Route path='/lessons-plans' exact element={<LessonPlans />} />
           <Route path='/more' exact element={<More />} />
-          <Route path='/profile' exact element={<Profile />} />
+          <Route path='/more/view/profile' exact element={<Profile />} />
 
           <Route path='/lesson-plans/add' exact element={<AddPlan />} />
           <Route path='/lesson-plans' exact element={<ViewPlans />} />
