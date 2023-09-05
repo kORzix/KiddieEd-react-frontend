@@ -29,4 +29,4 @@ const Navbar = () => {
     );
   }
    
-  export default topNavbar;
+  export default Navbar;
