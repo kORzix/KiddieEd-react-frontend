@@ -12,7 +12,7 @@ function search_button() {
 
 const Navbar = ({img}) => {
     return (
-        <div className="">
+        <div>
           <nav className="navbar navbar-expand navbar-dark">
             <div className="container-fluid d-flex justify-content-between align-items-center">
               <div className="d-flex align-items-center">

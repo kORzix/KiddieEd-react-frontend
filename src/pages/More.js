@@ -14,7 +14,7 @@ function More() {
         
         {/* Nav bar in the container */}
         <div className="container p-5 mb-5" style={{width: '70%'}}>
-          <TopNavBar/>
+          <TopNavBar pageNo={'more'} />
 
           <h3></h3>
 
@@ -28,8 +28,7 @@ function More() {
                   <img src={img1} class="img-fluid mb-5 mt-5" alt="..." />
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Monitor Progress</h5>
-                  <Link to="/button1" className="btn">Start</Link>
+                  <Link to="/button1" className="btn">Progress</Link>
                 </div>
               </div>
             </div>
@@ -41,8 +40,7 @@ function More() {
                   <img src={img2} class="img-fluid mb-5 mt-5" alt="..." />
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Premium Plans</h5>
-                  <Link to="/button1" className="btn">Start</Link>
+                  <Link to="/button1" className="btn">Premium</Link>
                 </div>
               </div>
             </div>
@@ -54,8 +52,7 @@ function More() {
                   <img src={img3} class="img-fluid mb-5 mt-5" alt="..." />
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Contact Us</h5>
-                  <Link to="/button1" className="btn">Start</Link>
+                  <Link to="/button1" className="btn">Contact Us</Link>
                 </div>
               </div>
             </div>
@@ -67,8 +64,7 @@ function More() {
                   <img src={img4} class="img-fluid mb-5 mt-5" alt="..." />
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Profile</h5>
-                  <Link to="/profile" className="btn">Start</Link>
+                  <Link to="/profile" className="btn">Profile</Link>
                 </div>
               </div>
             </div>

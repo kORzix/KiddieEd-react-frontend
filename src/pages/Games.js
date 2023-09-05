@@ -19,7 +19,7 @@ function Games() {
         {/* Nav bar in the container */}
         <div className="container p-5 mb-5" style={{width: '70%'}}>
 
-          <TopNavBar/>
+          <TopNavBar pageNo={'games'} />
           <h3 className='mt-4 mb-5'>Games</h3>
 
           {/* Cards */}
