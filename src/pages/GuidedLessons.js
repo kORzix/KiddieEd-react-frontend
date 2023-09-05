@@ -1,23 +1,15 @@
 import loginNav from "../images/guided lessons-nav-img.png";
-import img1 from "../images/guided lessons-img-1.png";
-import img2 from "../images/guided lessons-img-2.png";
-import img3 from "../images/guided lessons-img-3.png";
-import img4 from "../images/guided lessons-img-4.png";
-import img5 from "../images/guided lessons-img-5.png";
-import img6 from "../images/guided lessons-img-6.png";
-import img7 from "../images/guided lessons-img-7.png";
-import img8 from "../images/guided lessons-img-8.png";
 import Card from "../components/Card";
-
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
+
 import { PROXY } from "../configs";
 import React from "react";
 import axios from "axios";
-import Card from "../components/Card";
+
 
 function Lessons() {
-  const [gessons, setLessons] = React.useState([]);
+  const [lessons, setLessons] = React.useState([]);
 
   React.useEffect(() => {
     retrieveLessons();
@@ -44,15 +36,18 @@ function Lessons() {
         {/* Cards */}
         <div className="row d-flex justify-content-center">
           {/* Card Dynamic*/}
-          {gessons.map((gessons, index) => (
+          {lessons.map((lessons, index) => (
             <Card
               index={index}
-              image={gessons.image}
-              name={gessons.planName}
-              id={gessons._id}
+              image={lessons.image}
+              name={lessons.lessonName}
+              id={lessons._id}
+              url={"guid-lessons"}
+
             />
           ))}
         </div>
+      </div>
     </div>
   );
 }
