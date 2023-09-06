@@ -132,9 +132,9 @@ code {
   text-align: center;
 }
 
-/* .container .card-img img{
-  width: 80%;
-} */
+.container .card-img .admin-db-img{
+  width: 65%;
+}
 
 .container .card-body{
   border-top: 1px solid #00000023;
