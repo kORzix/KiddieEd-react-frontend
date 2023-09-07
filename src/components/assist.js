@@ -12,6 +12,7 @@ function buttonToggle() {
     } else {
         y.style.display = "none";
         x.style.display = "grid";
+        x.classList.add("blink-btn");
         SpeechRecognition.startListening({ continuous: true, language: 'en-IN' });
     }
 }
@@ -33,14 +34,16 @@ const Assist = () => {
         <div className="container">
 
             <div className="main-content" onClick={() =>  setTextToCopy(transcript)}>
-                {transcript}
+                {transcript.toLowerCase().includes('go to google') ? (
+                    window.location.href = 'https://www.google.com'
+                ) : (
+                    <p></p>
+                )}
+
+                {/* {transcript} */}
             </div>
 
             <div className="btn-style">
-
-                {/* <button onClick={setCopied}>
-                    {isCopied ? 'Copied!' : 'Copy to clipboard'}
-                </button> */}
                 <button className="assist-start-btn" onClick={buttonToggle} id="start-btn">Start Listening</button>
                 <button className="assist-stop-btn" onClick={buttonToggle} id="stop-btn" style={{display:'none'}}>Stop Listening</button>
 
