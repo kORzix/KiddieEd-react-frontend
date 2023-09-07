@@ -64,7 +64,7 @@ function More() {
                   <img src={img4} class="img-fluid mb-5 mt-5" alt="..." />
                 </div>
                 <div class="card-body">
-                  <Link to="/profile" className="btn">Profile</Link>
+                  <Link to="/more/view/profile" className="btn">Profile</Link>
                 </div>
               </div>
             </div>
