@@ -304,14 +304,14 @@ code {
 }
 
 .chat-btn{
-  padding: 30px 30px;
+  padding: 3.5%;
   border-radius: 50px;
   background-color: #01438b;
   color: white;
   border: none;
   cursor: pointer;
   position: fixed;
-  bottom: 50px;
+  bottom: 90px;
   right: 10px;
   display: grid;
 }
@@ -406,3 +406,29 @@ button[type="submit"] {
   color: #3100a3;
 }
 
+/* ------------------------- Assistant ------------------------- */
+.assist-start-btn{
+  padding: 2%;
+  border-radius: 50px;
+  background-color: #01438b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  display: grid;
+}
+
+.assist-stop-btn{
+  padding: 2%;
+  border-radius: 50px;
+  background-color: #01438b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  display: grid;
+}
