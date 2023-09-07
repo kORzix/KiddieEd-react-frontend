@@ -40,6 +40,7 @@ function Worksheet() {
               image={sheets.image}
               name={sheets.sheetName}
               id={sheets._id}
+              url={'worksheets'}
             />
           ))}
         </div>

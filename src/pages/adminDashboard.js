@@ -29,7 +29,7 @@ function AdminDashboard() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
               <div className="card">
                 <div className="card-img">
-                  <img src={img2} className="img-fluid mb-5 mt-5" alt="..." />
+                  <img src={img2} className="img-fluid mb-5 mt-5 admin-db-img" alt="..." />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">Worksheets</h5>
@@ -42,7 +42,7 @@ function AdminDashboard() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
               <div className="card">
                 <div className="card-img">
-                  <img src={img1} className="img-fluid mb-5 mt-5" alt="..." />
+                  <img src={img1} className="img-fluid mb-5 mt-5 admin-db-img" alt="..." />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">Games</h5>
@@ -55,7 +55,7 @@ function AdminDashboard() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
               <div className="card">
                 <div className="card-img">
-                  <img src={img3} className="img-fluid mb-5 mt-5" alt="..." />
+                  <img src={img3} className="img-fluid mb-5 mt-5 admin-db-img" alt="..." />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">Guided Lessons</h5>
@@ -68,7 +68,7 @@ function AdminDashboard() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
               <div className="card">
                 <div className="card-img">
-                  <img src={img5} className="img-fluid mb-5 mt-5" alt="..." />
+                  <img src={img5} className="img-fluid mb-5 mt-5 admin-db-img" alt="..." />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">Lessons Plans</h5>
@@ -81,7 +81,7 @@ function AdminDashboard() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
               <div className="card">
                 <div className="card-img">
-                  <img src={img6} className="img-fluid mb-5 mt-5" alt="..." />
+                  <img src={img6} className="img-fluid mb-5 mt-5 admin-db-img" alt="..." />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">Users</h5>
@@ -94,7 +94,7 @@ function AdminDashboard() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12">
               <div className="card">
                 <div className="card-img">
-                  <img src={img4} className="img-fluid mb-5 mt-5" alt="..." />
+                  <img src={img4} className="img-fluid mb-5 mt-5 admin-db-img" alt="..." />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">Teachers</h5>
