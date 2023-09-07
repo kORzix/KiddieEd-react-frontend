@@ -68,7 +68,6 @@ function LoginPage() {
           </div>
         </nav>
       </div>
-
       <div className="container">
         <div className="row">
           {/* Left Column for Image */}
@@ -114,7 +113,7 @@ function LoginPage() {
                   <button
                     type="submit"
                     className="btn btn-primary"
-                    style={{ padding: "0.2em 4em 0.2em 4em" }}
+                    style={{ padding: "0.2em 4em 0.2em 4em", backgroundColor: '#01448be3', color: 'white' }}
                   >
                     Login
                   </button>
