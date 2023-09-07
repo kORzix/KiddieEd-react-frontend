@@ -46,9 +46,6 @@ function Home() {
           />
         </div>
       </div>
-      <Link to="/login" className="nav-button">
-        Login
-      </Link>
     </div>
   );
 }
