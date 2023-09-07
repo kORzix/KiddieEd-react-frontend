@@ -24,6 +24,10 @@ export default function ViewLesson() {
 
   const { lessonName, image, payment, category } = lesson;
   return (
+    <div
+      className="container p-5 mb-5 bg-light rounded"
+      style={{ width: "70%" }}
+    >
     <div style={{ marginTop: "20px" }}>
       <h4>{lessonName}</h4>
       <hr />
@@ -38,6 +42,7 @@ export default function ViewLesson() {
         <dt className="col-sm-3">Category</dt>
         <dd className="col-sm-9">{category}</dd>
       </dl>
+    </div>
     </div>
   );
 }

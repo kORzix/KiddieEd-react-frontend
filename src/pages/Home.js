@@ -23,7 +23,7 @@ function Home() {
           <Card index={3} image={'file_1693669067163.png'} name={"Painting"} id={"64f356cbc49518319c4097d3"} url={'lesson-plans'}/>
         </div>
       </div>
-      <Link to="/login" className="nav-button">Login</Link>
+      <Link to="/login" className="nav-button">Login</Link> 
     </div>
   );
 }
