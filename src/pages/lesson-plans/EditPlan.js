@@ -6,7 +6,7 @@ import { PROXY } from "../../configs";
 
 export default function EditPlan() {
   const id = useParams().id;
-  const [file, setFile] = useState();  
+  const [file, setFile] = useState();
   const [image, setImage] = useState();
   const [planName, setPlanName] = useState({});
   const [payment, setPayment] = useState({});
@@ -18,9 +18,9 @@ export default function EditPlan() {
   };
 
   React.useEffect(() => {
-    axios.get(PROXY+`/lesson-plans/${id}`).then((res) => {
+    axios.get(PROXY + `/lesson-plans/${id}`).then((res) => {
       if (res.data.success) {
-        setImage(PROXY+`/images/` + res.data.plan.image);
+        setImage(PROXY + `/images/` + res.data.plan.image);
         setPlanName(res.data.plan.planName);
         setPayment(res.data.plan.payment);
         setCategory(res.data.plan.category);
@@ -38,18 +38,16 @@ export default function EditPlan() {
 
     // console.log(formdata);
 
-    axios
-      .put(PROXY+`/lesson-plans/update/${id}`, formdata)
-      .then((res) => {
-        if (res.data.success) {
-          console.log(res.data.success);
-          setFile({});
-          setImage({});
-          setPlanName({});
-          setPayment({});
-          setCategory({});
-        }
-      });
+    axios.put(PROXY + `/lesson-plans/update/${id}`, formdata).then((res) => {
+      if (res.data.success) {
+        console.log(res.data.success);
+        setFile({});
+        setImage({});
+        setPlanName({});
+        setPayment({});
+        setCategory({});
+      }
+    });
   };
 
   return (
@@ -82,9 +80,9 @@ export default function EditPlan() {
             style={{ marginBottom: "5px", marginTop: "20px" }}
           >
             {image ? (
-              <img src={image} height={"100vh"} alt="Plan Img"/>
+              <img src={image} height={"100vh"} alt="Plan Img" />
             ) : (
-              <img src={upload} height={"100vh"} alt="Plan Img"/>
+              <img src={upload} height={"100vh"} alt="Plan Img" />
             )}
             <br />
             Upload Image

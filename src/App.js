@@ -23,14 +23,10 @@ import EditSheet from "./pages/worksheets/EditSheet";
 
 import Admin from "./pages/adminDashboard";
 
-import './index.css';
+import "./index.css";
 import Eff from "./components/Eff";
 
-
-
 import Assist from "./components/assist";
-
-
 
 import Addgame from "./pages/games/AddGame";
 import ViewGames from "./pages/games/ViewGames";
@@ -42,7 +38,6 @@ import ViewLesson from "./pages/guided-lessons/ViewGuided";
 import EditLesson from "./pages/guided-lessons/EditGuided";
 import ChatBot from "./components/chatBot";
 
-
 // Components
 // import Navbar from "./components/Navbar";
 
@@ -50,43 +45,43 @@ function App() {
   return (
     <BrowserRouter>
       {/* <Navbar /> */}
-        <Routes>
-          <Route path='/' exact element={<Home />} />
-          <Route path='/login' exact element={<Login />} />
-          <Route path='/register' exact element={<Register />} />
-          <Route path='/worksheet' exact element={<Worksheet />} />
-          <Route path='/game' exact element={<Games />} />
-          <Route path='/guided-lessons' exact element={<GuidedLessons />} />
-          <Route path='/lessons-plans' exact element={<LessonPlans />} />
-          <Route path='/more' exact element={<More />} />
-          <Route path='/more/view/profile' exact element={<Profile />} />
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/register" exact element={<Register />} />
+        <Route path="/worksheet" exact element={<Worksheet />} />
+        <Route path="/game" exact element={<Games />} />
+        <Route path="/guided-lessons" exact element={<GuidedLessons />} />
+        <Route path="/lessons-plans" exact element={<LessonPlans />} />
+        <Route path="/more" exact element={<More />} />
+        <Route path="/more/view/profile" exact element={<Profile />} />
 
-          <Route path='/lesson-plans/add' exact element={<AddPlan />} />
-          <Route path='/lesson-plans' exact element={<ViewPlans />} />
-          <Route path='/lesson-plans/view/:id' exact element={<ViewPlan />} />
-          <Route path='/lesson-plans/edit/:id' exact element={<EditPlan />} />
+        <Route path="/lesson-plans/add" exact element={<AddPlan />} />
+        <Route path="/lesson-plans" exact element={<ViewPlans />} />
+        <Route path="/lesson-plans/view/:id" exact element={<ViewPlan />} />
+        <Route path="/lesson-plans/edit/:id" exact element={<EditPlan />} />
 
-          <Route path='/worksheets/add' exact element={<AddSheet />} />
-          <Route path='/worksheets' exact element={<ViewSheets />} />
-          <Route path='/worksheets/view/:id' exact element={<ViewSheet />} />
-          <Route path='/worksheets/edit/:id' exact element={<EditSheet />} />
+        <Route path="/worksheets/add" exact element={<AddSheet />} />
+        <Route path="/worksheets" exact element={<ViewSheets />} />
+        <Route path="/worksheets/view/:id" exact element={<ViewSheet />} />
+        <Route path="/worksheets/edit/:id" exact element={<EditSheet />} />
 
-          <Route path='/admin' exact element={<Admin />} />
+        <Route path="/admin" exact element={<Admin />} />
 
-          <Route path='/games/add' exact element={<Addgame />} />
-          <Route path='/games' exact element={<ViewGames />} />
-          <Route path='/games/view/:id' exact element={<ViewGame />} />
-          <Route path='/games/edit/:id' exact element={<EditGame />} />
+        <Route path="/games/add" exact element={<Addgame />} />
+        <Route path="/games" exact element={<ViewGames />} />
+        <Route path="/games/view/:id" exact element={<ViewGame />} />
+        <Route path="/games/edit/:id" exact element={<EditGame />} />
 
-          <Route path='/guid-lessons/add' exact element={<AddLesson />} />
-          <Route path='/guid-lessons' exact element={<ViewLessons />} />
-          <Route path='/guid-lessons/view/:id' exact element={<ViewLesson />} />
-          <Route path='/guid-lessons/edit/:id' exact element={<EditLesson />} />
+        <Route path="/guid-lessons/add" exact element={<AddLesson />} />
+        <Route path="/guid-lessons" exact element={<ViewLessons />} />
+        <Route path="/guid-lessons/view/:id" exact element={<ViewLesson />} />
+        <Route path="/guid-lessons/edit/:id" exact element={<EditLesson />} />
 
-          {/* <Route path='/article/:name' element={<Article />} /> */}
-          {/* <Route path='*' element={<NotFound />} /> */}
-        </Routes>
-        <Assist/>
+        {/* <Route path='/article/:name' element={<Article />} /> */}
+        {/* <Route path='*' element={<NotFound />} /> */}
+      </Routes>
+      <Assist />
       <Eff />
       <ChatBot />
       {/* </div> */}

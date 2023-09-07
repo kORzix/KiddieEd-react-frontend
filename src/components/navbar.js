@@ -39,7 +39,7 @@ const Navbar = ({ img }) => {
               className="form-control text-reset"
               placeholder="Search"
               name="searchQuery"
-            // onChange={handleSearchArea}
+              // onChange={handleSearchArea}
             />
             <span className="search-icon">
               <i className="fas fa-search"></i>
@@ -53,6 +53,20 @@ const Navbar = ({ img }) => {
             <i className="fas fa-search"></i>
           </button>
         </div>
+        <a
+          className="btn btn-lg text-white btn-rounded"
+          href="/login"
+          style={{ backgroundColor: "#01438b" }}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-lg text-white mx-3 btn-rounded"
+          href="/register"
+          style={{ backgroundColor: "#01438b" }}
+        >
+          Register
+        </a>
       </nav>
       <div
         className="search-bar mt-4"
