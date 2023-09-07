@@ -15,9 +15,9 @@ const topNavbar = ({pageNo}) => {
                     )}
 
                     {pageNo === "games" ? (
-                        <Link to="/games" className="nav-button selected">Games</Link>
+                        <Link to="/game" className="nav-button selected">Games</Link>
                     ) : (
-                        <Link to="/games" className="nav-button">Games</Link>
+                        <Link to="/game" className="nav-button">Games</Link>
                     )}
 
                     {pageNo === "guided-lessons" ? (
@@ -43,7 +43,7 @@ const topNavbar = ({pageNo}) => {
             <div className="side-nav-container">
                 <div className="side-nav-buttons" style={{margin: '0 1.5em 0 30%'}}>
                     <Link to="/worksheet" className="side-nav-button"><img className="icon" src={navBarImg.worksheet} alt="worksheet icon"/></Link>
-                    <Link to="/games" className="side-nav-button"><img className="icon" src={navBarImg.game} alt="game icon" /></Link>
+                    <Link to="/game" className="side-nav-button"><img className="icon" src={navBarImg.game} alt="game icon" /></Link>
                     <Link to="/guided-lessons" className="side-nav-button"><img className="icon" src={navBarImg.lesson} alt="lesson icon" /></Link>
                     <Link to="/lessons-plans" className="side-nav-button"><img className="icon" src={navBarImg.plan} alt="plan icon" /></Link>
                     <Link to="/more" className="side-nav-button"><img className="icon" src={navBarImg.more} alt="more icon" /></Link>

@@ -1,6 +1,6 @@
 const config = {
   PROXY:'http://localhost:8000',
-  API: "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",
+  API: "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",
 };
 
 module.exports = config;
