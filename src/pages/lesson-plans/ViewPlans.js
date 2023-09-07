@@ -32,7 +32,7 @@ export default function ViewPlans() {
   };
 
   function filterData(plans, searchKey) {
-    searchKey=searchKey.toLowerCase();
+    searchKey = searchKey.toLowerCase();
     const result = plans.filter(
       (plan) =>
         plan.planName.toLowerCase().includes(searchKey) ||
@@ -85,50 +85,52 @@ export default function ViewPlans() {
           </tr>
         </thead>
         <tbody>
-          {isLoading
-            ? (<div className="p-5">Loading...</div>)
-            : plans.map((plans, index) => (
-                <tr key={index}>
-                  <th scope="row">{index + 1}</th>
-                  <td>
-                    <a
-                      href={`/lesson-plans/view/${plans._id}`}
-                      style={{
-                        textDecoration: "none",
-                        color: "black",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      {plans.planName}
-                    </a>
-                  </td>
-                  {/* <td>{plans.image}</td> */}
-                  <td>
-                    <img
-                      src={PROXY + `/images/` + plans.image}
-                      width={"80vh"}
-                      alt="Plan Img"
-                    />
-                  </td>
-                  <td>{plans.payment}</td>
-                  <td>{plans.category}</td>
-                  <td>
-                    <a
-                      className="btn btn-warning"
-                      href={`/lesson-plans/edit/${plans._id}`}
-                    >
-                      <i className="fas fa-edit"></i>&nbsp;Edit
-                    </a>
-                    &nbsp;
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => onDelete(plans._id)}
-                    >
-                      <i className="far fa-trash-alt"></i>&nbsp;Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
+          {isLoading ? (
+            <div className="p-5">Loading...</div>
+          ) : (
+            plans.map((plans, index) => (
+              <tr key={index}>
+                <th scope="row">{index + 1}</th>
+                <td>
+                  <a
+                    href={`/lesson-plans/view/${plans._id}`}
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {plans.planName}
+                  </a>
+                </td>
+                {/* <td>{plans.image}</td> */}
+                <td>
+                  <img
+                    src={PROXY + `/images/` + plans.image}
+                    width={"80vh"}
+                    alt="Plan Img"
+                  />
+                </td>
+                <td>{plans.payment}</td>
+                <td>{plans.category}</td>
+                <td>
+                  <a
+                    className="btn btn-warning"
+                    href={`/lesson-plans/edit/${plans._id}`}
+                  >
+                    <i className="fas fa-edit"></i>&nbsp;Edit
+                  </a>
+                  &nbsp;
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => onDelete(plans._id)}
+                  >
+                    <i className="far fa-trash-alt"></i>&nbsp;Delete
+                  </button>
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
       <a

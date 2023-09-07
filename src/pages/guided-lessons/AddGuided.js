@@ -16,18 +16,17 @@ export default function AddLesson() {
     formdata.append("lessonName", lessonName);
     formdata.append("payment", payment);
     formdata.append("category", category);
-    
 
     console.log(formdata);
 
-    axios.post(PROXY+"/guid-lessons/add", formdata).then((res) => {
+    axios.post(PROXY + "/guid-lessons/add", formdata).then((res) => {
       if (res.data.success) {
-      setFile({});
+        setFile({});
         setlessonName({});
         setPayment({});
         setCategory({});
-        alert("Lesson added successfully")
-      }    
+        alert("Lesson added successfully");
+      }
     });
   };
 
@@ -61,9 +60,13 @@ export default function AddLesson() {
             style={{ marginBottom: "5px", marginTop: "20px" }}
           >
             {file ? (
-              <img src={URL.createObjectURL(file)} height={"100vh"} alt="Lesson Img"/>
+              <img
+                src={URL.createObjectURL(file)}
+                height={"100vh"}
+                alt="Lesson Img"
+              />
             ) : (
-              <img src={upload} height={"100vh"} alt="Lesson Img"/>
+              <img src={upload} height={"100vh"} alt="Lesson Img" />
             )}
             <br />
             Upload Image

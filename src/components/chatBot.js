@@ -37,7 +37,11 @@ const chatbot = () => {
         </form>
       </div>
 
-      <button id="btn" className="chat-btn btn btn-rounded" onClick={chatToggle}>
+      <button
+        id="btn"
+        className="chat-btn btn btn-rounded"
+        onClick={chatToggle}
+      >
         <i class="fa-regular fa-comments"></i>
       </button>
     </div>
@@ -76,7 +80,7 @@ function chat() {
           "Hello,I am the KiddieEd chatbot. How can I help you today?";
         messages.innerHTML += `<div class="message bot-message"><span>${predefinedResponse}</span>
 </div>`;
-      } else if (message.toLowerCase() === 'hi') {
+      } else if (message.toLowerCase() === "hi") {
         const predefinedResponse =
           "Hello,I am the KiddieEd chatbot. How can I help you today?";
         messages.innerHTML += `<div class="message bot-message"><span>${predefinedResponse}</span>

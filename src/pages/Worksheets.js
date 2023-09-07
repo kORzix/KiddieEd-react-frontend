@@ -6,8 +6,6 @@ import React from "react";
 import axios from "axios";
 import Card from "../components/Card";
 
-  
-
 function Worksheet() {
   const [sheets, setSheets] = React.useState([]);
 
@@ -28,7 +26,7 @@ function Worksheet() {
 
       {/* Nav bar in the container */}
       <div className="container p-5 mb-5" style={{ width: "70%" }}>
-        <TopNavBar pageNo={'worksheets'} />
+        <TopNavBar pageNo={"worksheets"} />
 
         <h3 className="mt-4 mb-5">Worksheets</h3>
 
@@ -40,7 +38,7 @@ function Worksheet() {
               image={sheets.image}
               name={sheets.sheetName}
               id={sheets._id}
-              url={'worksheets'}
+              url={"worksheets"}
             />
           ))}
         </div>
