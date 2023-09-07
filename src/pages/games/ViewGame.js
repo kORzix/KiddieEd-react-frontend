@@ -24,6 +24,10 @@ export default function ViewGame() {
 
   const { gameName, image, payment, category } = game;
   return (
+    <div
+      className="container p-5 mb-5 bg-light rounded"
+      style={{ width: "70%" }}
+    >
     <div style={{ marginTop: "20px" }}>
       <h4>{gameName}</h4>
       <hr />
@@ -38,6 +42,7 @@ export default function ViewGame() {
         <dt className="col-sm-3">Category</dt>
         <dd className="col-sm-9">{category}</dd>
       </dl>
+    </div>
     </div>
   );
 }
