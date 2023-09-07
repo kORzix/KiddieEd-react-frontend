@@ -87,7 +87,7 @@ function App() {
           {/* <Route path='/article/:name' element={<Article />} /> */}
           {/* <Route path='*' element={<NotFound />} /> */}
         </Routes>
-        {/* <Assist/> */}
+        <Assist/>
       <Eff />
       <ChatBot />
       {/* </div> */}
