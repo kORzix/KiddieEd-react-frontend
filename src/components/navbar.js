@@ -27,8 +27,8 @@ const Navbar = ({img}) => {
                   <i className="fas fa-search"></i>
                 </button>                
             </div>
-            <a className="btn btn-lg text-white" href="/login" style={{backgroundColor:'#01438b'}}>Login</a>
-            <a className="btn btn-lg text-white mx-3" href='/register' style={{backgroundColor:'#01438b'}}>Register</a>
+            <a className="btn btn-lg text-white btn-rounded" href="/login" style={{backgroundColor:'#01438b'}}>Login</a>
+            <a className="btn btn-lg text-white mx-3 btn-rounded" href='/register' style={{backgroundColor:'#01438b'}}>Register</a>
           </nav>
           <div className="search-bar mt-4" id="s_bar" style={{display:'none',width: '70%',margin:'0 auto'}}>
             <input id="search-input form1" type="search" className="form-control text-reset" placeholder="Search" />

@@ -37,7 +37,7 @@ const chatbot = () => {
         </form>
       </div>
 
-      <button id="btn" className="chat-btn" onClick={chatToggle}>
+      <button id="btn" className="chat-btn btn btn-rounded" onClick={chatToggle}>
         <i class="fa-regular fa-comments"></i>
       </button>
     </div>
