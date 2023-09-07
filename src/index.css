@@ -309,7 +309,7 @@ code {
 
 .chat-btn{
   padding: 30px;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   background-color: #01438b;
   color: white;
   border: none;
@@ -318,6 +318,10 @@ code {
   bottom: 90px;
   right: 10px;
   display: grid;
+}
+.chat-btn:hover{
+  background-color: #01438b;
+  color: white;
 }
 
 .chat-btn-toggled{

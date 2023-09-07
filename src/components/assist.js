@@ -61,9 +61,9 @@ const Assist = () => {
         {/* {transcript} */}
       </div>
 
-      <div className="btn-style">
+      <div className="btn-style btn btn-rounded">
         <button
-          className="assist-start-btn"
+          className="assist-start-btn "
           onClick={buttonToggle}
           id="start-btn"
         >
