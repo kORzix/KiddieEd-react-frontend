@@ -169,6 +169,10 @@ code {
   width: 30vw;
 }
 
+#hide-search input:focus {
+  width: 30vw;
+}
+
 .search-bar input {
   border: 0px;
   width: 100%;
