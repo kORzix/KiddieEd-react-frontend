@@ -4,6 +4,42 @@ import loginNav from '../images/register-nav-img.png';
 import { Link } from "react-router-dom";
 
 function Register() {
+    const [formData, setFormData] = useState({
+        userName: '',
+        image: '',
+        userEmail: '',
+        userPassword: '',
+        passwordrepeat: '',
+      })
+    
+    const { userName, image, userEmail, userPassword, passwordrepeat } = formData
+
+    const onChange = (e) => {
+        setFormData((prevState) => ({
+          ...prevState,
+          [e.target.name]: e.target.value,
+        }))
+      }
+    
+    const onSubmit = (e) => {
+    e.preventDefault()
+
+    if (!isChecked) {
+        toast.error('Please accept the terms and conditions')
+    } else if (password !== passwordrepeat) {
+        toast.error('Passwords do not match')
+    } else {
+        const userData = {
+            userName,
+            image,
+            userEmail,
+            userPassword,
+        }
+
+        register(userData)
+    }
+    }
+
     return (
         <div>
             <div className="m-0">

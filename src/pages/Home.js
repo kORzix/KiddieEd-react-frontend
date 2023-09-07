@@ -1,4 +1,5 @@
 import loginNav from "../images/dashboard-nav-img.png";
+import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
@@ -8,7 +9,6 @@ function Home() {
     <div className="App">
 
       <Navbar img={loginNav} />
-
 
       <div className="container p-5 mb-5" style={{ width: "70%" }}>
         <TopNavBar />
@@ -23,6 +23,7 @@ function Home() {
           <Card index={3} image={'file_1693669067163.png'} name={"Painting"} id={"64f356cbc49518319c4097d3"} url={'lesson-plans'}/>
         </div>
       </div>
+      <Link to="/login" className="nav-button">Login</Link>
     </div>
   );
 }
