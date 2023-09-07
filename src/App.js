@@ -70,9 +70,8 @@ function App() {
           <Route path='/worksheets' exact element={<ViewSheets />} />
           <Route path='/worksheets/view/:id' exact element={<ViewSheet />} />
           <Route path='/worksheets/edit/:id' exact element={<EditSheet />} />
+
           <Route path='/admin' exact element={<Admin />} />
-
-
 
           <Route path='/games/add' exact element={<Addgame />} />
           <Route path='/games' exact element={<ViewGames />} />
