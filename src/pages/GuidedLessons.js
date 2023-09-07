@@ -1,6 +1,6 @@
-import loginNav from '../images/guided lessons-nav-img.png';
-import Navbar from '../components/navbar';
-import TopNavBar from '../components/topnavbar';
+import loginNav from "../images/guided lessons-nav-img.png";
+import Navbar from "../components/navbar";
+import TopNavBar from "../components/topnavbar";
 import { PROXY } from "../configs";
 import React from "react";
 import axios from "axios";
@@ -22,28 +22,27 @@ function GuidedLessons() {
   }
   return (
     <div className="App">
-        <Navbar img={loginNav} />
-        
-        {/* Nav bar in the container */}
-        <div className="container p-5 mb-5" style={{width: '70%'}}>
-          <TopNavBar pageNo={'guided-lessons'} />
+      <Navbar img={loginNav} />
 
-          <h3 className='mt-4 mb-5'>Guided Lessons</h3>
+      {/* Nav bar in the container */}
+      <div className="container p-5 mb-5" style={{ width: "70%" }}>
+        <TopNavBar pageNo={"guided-lessons"} />
 
-          {/* Cards */}
-          <div className="row d-flex justify-content-center">
+        <h3 className="mt-4 mb-5">Guided Lessons</h3>
+
+        {/* Cards */}
+        <div className="row d-flex justify-content-center">
           {lessons.map((lessons, index) => (
             <Card
               index={index}
               image={lessons.image}
               name={lessons.lessonName}
               id={lessons._id}
-              url={'guid-lessons'}
+              url={"guid-lessons"}
             />
           ))}
-            
-          </div>
         </div>
+      </div>
     </div>
   );
 }
