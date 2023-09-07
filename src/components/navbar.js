@@ -23,10 +23,12 @@ const Navbar = ({img}) => {
                 <input type="text" className="form-control text-reset" placeholder="Search" />
                 <span className="search-icon"><i className="fas fa-search"></i></span>
               </div>
-                <button type="button" className="btn btn-primary hide-btn btn-floating btn-lg" onClick={search_button}>
+                <button type="button" className="btn btn-primary hide-btn btn-floating btn-lg float-right" onClick={search_button}>
                   <i className="fas fa-search"></i>
-                </button>
+                </button>                
             </div>
+            <a className="btn btn-lg text-white" href="/login" style={{backgroundColor:'#01438b'}}>Login</a>
+            <a className="btn btn-lg text-white mx-3" href='/register' style={{backgroundColor:'#01438b'}}>Register</a>
           </nav>
           <div className="search-bar mt-4" id="s_bar" style={{display:'none',width: '70%',margin:'0 auto'}}>
             <input id="search-input form1" type="search" className="form-control text-reset" placeholder="Search" />
