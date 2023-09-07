@@ -99,7 +99,7 @@ function LoginPage() {
                                 </div>
                                 <div className="submit-btn">
                                     <button type="submit" className="btn btn-primary"
-                                            style={{padding: '0.2em 4em 0.2em 4em'}}>Login
+                                            style={{padding: '0.2em 4em 0.2em 4em', backgroundColor: '#01448be3', color: 'white'}}>Login
                                     </button>
                                 </div>
                                 <p>Don't have an account? <Link to="/register" style={{color: '#00B4D8'}}>Register</Link></p>
