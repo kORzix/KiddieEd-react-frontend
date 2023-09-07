@@ -27,7 +27,7 @@ function LessonPlans() {
 
       {/* Nav bar in the container */}
       <div className="container p-5 mb-5" style={{ width: "70%" }}>
-        <TopNavBar pageNo={'lessons-plans'} />
+        <TopNavBar pageNo={"lessons-plans"} />
 
         <h3 className="mt-4 mb-5">Lessons Plans</h3>
 
@@ -40,7 +40,7 @@ function LessonPlans() {
               image={plans.image}
               name={plans.planName}
               id={plans._id}
-              url={'lesson-plans'}
+              url={"lesson-plans"}
             />
           ))}
         </div>

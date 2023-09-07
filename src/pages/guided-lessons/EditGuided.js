@@ -6,7 +6,7 @@ import { PROXY } from "../../configs";
 
 export default function EditLesson() {
   const id = useParams().id;
-  const [file, setFile] = useState();  
+  const [file, setFile] = useState();
   const [image, setImage] = useState();
   const [lessonName, setLessonName] = useState({});
   const [payment, setPayment] = useState({});
@@ -18,9 +18,9 @@ export default function EditLesson() {
   };
 
   React.useEffect(() => {
-    axios.get(PROXY+`/guid-lessons/${id}`).then((res) => {
+    axios.get(PROXY + `/guid-lessons/${id}`).then((res) => {
       if (res.data.success) {
-        setImage(PROXY+`/images/` + res.data.lesson.image);
+        setImage(PROXY + `/images/` + res.data.lesson.image);
         setLessonName(res.data.lesson.lessonName);
         setPayment(res.data.lesson.payment);
         setCategory(res.data.lesson.category);
@@ -38,18 +38,16 @@ export default function EditLesson() {
 
     // console.log(formdata);
 
-    axios
-      .put(PROXY+`/guid-lessons/update/${id}`, formdata)
-      .then((res) => {
-        if (res.data.success) {
-          console.log(res.data.success);
-          setFile({});
-          setImage({});
-          setLessonName({});
-          setPayment({});
-          setCategory({});
-        }
-      });
+    axios.put(PROXY + `/guid-lessons/update/${id}`, formdata).then((res) => {
+      if (res.data.success) {
+        console.log(res.data.success);
+        setFile({});
+        setImage({});
+        setLessonName({});
+        setPayment({});
+        setCategory({});
+      }
+    });
   };
 
   return (
@@ -82,9 +80,9 @@ export default function EditLesson() {
             style={{ marginBottom: "5px", marginTop: "20px" }}
           >
             {image ? (
-              <img src={image} height={"100vh"} alt="Lesson Img"/>
+              <img src={image} height={"100vh"} alt="Lesson Img" />
             ) : (
-              <img src={upload} height={"100vh"} alt="Lesson Img"/>
+              <img src={upload} height={"100vh"} alt="Lesson Img" />
             )}
             <br />
             Upload Image

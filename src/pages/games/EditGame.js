@@ -6,7 +6,7 @@ import { PROXY } from "../../configs";
 
 export default function EditGame() {
   const id = useParams().id;
-  const [file, setFile] = useState();  
+  const [file, setFile] = useState();
   const [image, setImage] = useState();
   const [gameName, setGameName] = useState({});
   const [payment, setPayment] = useState({});
@@ -18,9 +18,9 @@ export default function EditGame() {
   };
 
   React.useEffect(() => {
-    axios.get(PROXY+`/games/${id}`).then((res) => {
+    axios.get(PROXY + `/games/${id}`).then((res) => {
       if (res.data.success) {
-        setImage(PROXY+`/images/` + res.data.game.image);
+        setImage(PROXY + `/images/` + res.data.game.image);
         setGameName(res.data.game.gameName);
         setPayment(res.data.game.payment);
         setCategory(res.data.game.category);
@@ -38,18 +38,16 @@ export default function EditGame() {
 
     // console.log(formdata);
 
-    axios
-      .put(PROXY+`/games/update/${id}`, formdata)
-      .then((res) => {
-        if (res.data.success) {
-          console.log(res.data.success);
-          setFile({});
-          setImage({});
-          setGameName({});
-          setPayment({});
-          setCategory({});
-        }
-      });
+    axios.put(PROXY + `/games/update/${id}`, formdata).then((res) => {
+      if (res.data.success) {
+        console.log(res.data.success);
+        setFile({});
+        setImage({});
+        setGameName({});
+        setPayment({});
+        setCategory({});
+      }
+    });
   };
 
   return (
@@ -82,9 +80,9 @@ export default function EditGame() {
             style={{ marginBottom: "5px", marginTop: "20px" }}
           >
             {image ? (
-              <img src={image} height={"100vh"} alt="Game Img"/>
+              <img src={image} height={"100vh"} alt="Game Img" />
             ) : (
-              <img src={upload} height={"100vh"} alt="Game Img"/>
+              <img src={upload} height={"100vh"} alt="Game Img" />
             )}
             <br />
             Upload Image

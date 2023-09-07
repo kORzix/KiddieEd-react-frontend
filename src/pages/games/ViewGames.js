@@ -32,7 +32,7 @@ export default function ViewGames() {
   };
 
   function filterData(games, searchKey) {
-    searchKey=searchKey.toLowerCase();
+    searchKey = searchKey.toLowerCase();
     const result = games.filter(
       (game) =>
         game.gameName.toLowerCase().includes(searchKey) ||
@@ -85,50 +85,52 @@ export default function ViewGames() {
           </tr>
         </thead>
         <tbody>
-          {isLoading
-            ? (<div className="p-5">Loading...</div>)
-            : games.map((games, index) => (
-                <tr key={index}>
-                  <th scope="row">{index + 1}</th>
-                  <td>
-                    <a
-                      href={`/games/view/${games._id}`}
-                      style={{
-                        textDecoration: "none",
-                        color: "black",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      {games.gameName}
-                    </a>
-                  </td>
-                  {/* <td>{games.image}</td> */}
-                  <td>
-                    <img
-                      src={PROXY + `/images/` + games.image}
-                      width={"80vh"}
-                      alt="Game Img"
-                    />
-                  </td>
-                  <td>{games.payment}</td>
-                  <td>{games.category}</td>
-                  <td>
-                    <a
-                      className="btn btn-warning"
-                      href={`/games/edit/${games._id}`}
-                    >
-                      <i className="fas fa-edit"></i>&nbsp;Edit
-                    </a>
-                    &nbsp;
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => onDelete(games._id)}
-                    >
-                      <i className="far fa-trash-alt"></i>&nbsp;Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
+          {isLoading ? (
+            <div className="p-5">Loading...</div>
+          ) : (
+            games.map((games, index) => (
+              <tr key={index}>
+                <th scope="row">{index + 1}</th>
+                <td>
+                  <a
+                    href={`/games/view/${games._id}`}
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {games.gameName}
+                  </a>
+                </td>
+                {/* <td>{games.image}</td> */}
+                <td>
+                  <img
+                    src={PROXY + `/images/` + games.image}
+                    width={"80vh"}
+                    alt="Game Img"
+                  />
+                </td>
+                <td>{games.payment}</td>
+                <td>{games.category}</td>
+                <td>
+                  <a
+                    className="btn btn-warning"
+                    href={`/games/edit/${games._id}`}
+                  >
+                    <i className="fas fa-edit"></i>&nbsp;Edit
+                  </a>
+                  &nbsp;
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => onDelete(games._id)}
+                  >
+                    <i className="far fa-trash-alt"></i>&nbsp;Delete
+                  </button>
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
       <a
