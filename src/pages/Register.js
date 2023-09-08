@@ -50,7 +50,7 @@ function Register() {
             .then((res) => {
             if (res.data.success) {
                 toast.success('Registration successful');
-                navigate('/login');
+                navigate(PROXY+"/user/login");
             } else {
                 toast.error(res.data.message); 
             }

@@ -12,7 +12,7 @@ function LoginPage() {
         userEmail: '',
         userPassword: '',
       })
-    
+
       const { userEmail, userPassword } = formData
     
       const navigate = useNavigate()
@@ -23,7 +23,7 @@ function LoginPage() {
           [e.target.name]: e.target.value,
         }))
       }
-    
+
       const onSubmit = (e) => {
         e.preventDefault()
     
@@ -31,13 +31,15 @@ function LoginPage() {
           userEmail,
           userPassword,
         }
-    
+
         axios.post(PROXY+"/user/login", userData)
             .then((res) => {
-            if (res.data.success) {
-                console.log('Login successful!')
-                toast.success('Login successful!');
-                navigate('/');
+            console.log("Response from server:", res.data);
+            if (res.data) {
+                console.log("User id:", res.data._id);
+                console.log("Login successful!");
+                toast.success("Login successful!");
+                navigate("../");
             } else {
                 toast.error(res.data.message); 
             }
@@ -72,7 +74,7 @@ function LoginPage() {
                             <h2>Sign In to your Account</h2>
                             <form style={{margin: '3em 2em 1em 2em'}} onSubmit={onSubmit}>
                                 <div className="mb-3">
-                                    <label htmlFor="username" className="form-label">Email</label>
+                                    <label htmlFor="useremail" className="form-label">Email</label>
                                     <input
                                         type="text"
                                         className="form-control"
@@ -82,14 +84,14 @@ function LoginPage() {
                                         value={userEmail}
                                         required
                                         onChange={onChange}
-                                        />
+                                    />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="password" className="form-label">Password</label>
                                     <input
                                         type="password"
                                         className="form-control"
-                                        id="userPassword"
+                                        id="password"
                                         placeholder='Password'
                                         name="userPassword"
                                         value={userPassword}
