@@ -16,18 +16,17 @@ export default function AddPlan() {
     formdata.append("planName", planName);
     formdata.append("payment", payment);
     formdata.append("category", category);
-    
 
     console.log(formdata);
 
-    axios.post(PROXY+"/lesson-plans/add", formdata).then((res) => {
+    axios.post(PROXY + "/lesson-plans/add", formdata).then((res) => {
       if (res.data.success) {
-      setFile({});
+        setFile({});
         setPlanName({});
         setPayment({});
         setCategory({});
-        alert("Lesson plan added successfully")
-      }    
+        alert("Lesson plan added successfully");
+      }
     });
   };
 
@@ -61,9 +60,13 @@ export default function AddPlan() {
             style={{ marginBottom: "5px", marginTop: "20px" }}
           >
             {file ? (
-              <img src={URL.createObjectURL(file)} height={"100vh"} alt="Plan Img"/>
+              <img
+                src={URL.createObjectURL(file)}
+                height={"100vh"}
+                alt="Plan Img"
+              />
             ) : (
-              <img src={upload} height={"100vh"} alt="Plan Img"/>
+              <img src={upload} height={"100vh"} alt="Plan Img" />
             )}
             <br />
             Upload Image

@@ -5,11 +5,11 @@ import plan from "../images/plans.icon.png";
 import more from "../images/more.icon.png";
 
 const navBarImg = {
-    worksheet:worksheet,
-    game: game,
-    lesson:lesson,
-    plan:plan,
-    more:more,
-}
+  worksheet: worksheet,
+  game: game,
+  lesson: lesson,
+  plan: plan,
+  more: more,
+};
 
 export default navBarImg;

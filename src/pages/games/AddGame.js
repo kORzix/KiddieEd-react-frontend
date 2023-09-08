@@ -16,18 +16,17 @@ export default function Addgame() {
     formdata.append("gameName", gameName);
     formdata.append("payment", payment);
     formdata.append("category", category);
-    
 
     console.log(formdata);
 
-    axios.post(PROXY+"/games/add", formdata).then((res) => {
+    axios.post(PROXY + "/games/add", formdata).then((res) => {
       if (res.data.success) {
-      setFile({});
+        setFile({});
         setgameName({});
         setPayment({});
         setCategory({});
-        alert("Game added successfully")
-      }    
+        alert("Game added successfully");
+      }
     });
   };
 
@@ -61,9 +60,13 @@ export default function Addgame() {
             style={{ marginBottom: "5px", marginTop: "20px" }}
           >
             {file ? (
-              <img src={URL.createObjectURL(file)} height={"100vh"} alt="Game Img"/>
+              <img
+                src={URL.createObjectURL(file)}
+                height={"100vh"}
+                alt="Game Img"
+              />
             ) : (
-              <img src={upload} height={"100vh"} alt="Game Img"/>
+              <img src={upload} height={"100vh"} alt="Game Img" />
             )}
             <br />
             Upload Image
@@ -97,7 +100,9 @@ export default function Addgame() {
           type="submit"
           style={{ marginTop: "15px" }}
           onClick={onSubmit}
-        >        <i className="far fa-check-square"></i>&nbsp; Add
+        >
+          {" "}
+          <i className="far fa-check-square"></i>&nbsp; Add
         </button>
       </form>
     </div>
