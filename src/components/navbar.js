@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { toast } from 'react-toastify'
-import axios from 'axios';
+import { toast } from "react-toastify";
+import axios from "axios";
 import { PROXY } from "../configs";
 
 function search_button() {
@@ -14,39 +14,40 @@ function search_button() {
 }
 
 const Navbar = ({ img }) => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    axios.get(PROXY + '/user/check-session')
+    axios
+      .get(PROXY + "/user/check-session")
       .then((res) => {
         setIsAuthenticated(res.data.isAuthenticated);
       })
       .catch((error) => {
-        console.error('Session check error:', error);
+        console.error("Session check error:", error);
       });
   }, []);
 
   const onLogout = () => {
-    axios.post(PROXY+"/user/logout")
-        .then((res) => {
+    axios
+      .post(PROXY + "/user/logout")
+      .then((res) => {
         console.log("Response from server:", res.data);
         if (res.data) {
-            console.log("Logout successful!");
-            toast.success("Logout successful!");
-            setIsAuthenticated(false);
-            navigate("../");
+          console.log("Logout successful!");
+          toast.success("Logout successful!");
+          setIsAuthenticated(false);
+          navigate("../");
         } else {
-            toast.error(res.data.message); 
+          toast.error(res.data.message);
         }
-        })
-        .catch((error) => {
-        console.error('Logout error:', error);
-        toast.error('Logout failed!');
-        });
-  }
+      })
+      .catch((error) => {
+        console.error("Logout error:", error);
+        toast.error("Logout failed!");
+      });
+  };
 
   return (
     <div>
@@ -84,42 +85,41 @@ const Navbar = ({ img }) => {
           </div>
           <button
             type="button"
-            className="btn btn-primary hide-btn btn-floating btn-lg"
+            className="btn btn-primary hide-btn btn-floating btn-lg mx-2"
             onClick={search_button}
           >
             <i className="fas fa-search"></i>
           </button>
         </div>
 
-      <div>
+        <div>
           {isAuthenticated ? (
-                  <button 
-                    className="btn btn-lg text-white btn-rounded"
-                    style={{ backgroundColor: "#01438b" }}
-                    onClick={onLogout}
-                  >
-                      Logout
-                  </button>
+            <button
+              className="btn btn-lg text-white btn-rounded"
+              style={{ backgroundColor: "#01438b" }}
+              onClick={onLogout}
+            >
+              Logout
+            </button>
           ) : (
-              <div>
-                <Link 
-                  to='/login'
-                  className="btn btn-lg text-white btn-rounded"
-                  style={{ backgroundColor: "#01438b" }}
-                >
-                      Login
-                </Link>
-                <Link
-                  to='/register'
-                  className="btn btn-lg text-white mx-3 btn-rounded"
-                  style={{ backgroundColor: "#01438b" }}
-                >
-                    Register
-                </Link>
-              </div>
+            <div className="d-flex">
+              <Link
+                to="/login"
+                className="btn btn-lg text-white btn-rounded mx-2"
+                style={{ backgroundColor: "#01438b" }}
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="btn btn-lg text-white btn-rounded"
+                style={{ backgroundColor: "#01438b" }}
+              >
+                Register
+              </Link>
+            </div>
           )}
-      </div>
-
+        </div>
       </nav>
       <div
         className="search-bar mt-4"

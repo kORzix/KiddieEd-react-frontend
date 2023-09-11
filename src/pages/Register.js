@@ -4,7 +4,6 @@ import loginNav from "../images/register-nav-img.png";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
-import upload from "../images/upload.jpg";
 import { PROXY } from "../configs";
 
 function Register() {
