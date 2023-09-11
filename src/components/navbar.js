@@ -1,5 +1,8 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { PROXY } from "../configs";
 
 function search_button() {
   var x = document.getElementById("s_bar");
@@ -11,6 +14,41 @@ function search_button() {
 }
 
 const Navbar = ({ img }) => {
+  const navigate = useNavigate();
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get(PROXY + "/user/check-session")
+      .then((res) => {
+        setIsAuthenticated(res.data.isAuthenticated);
+      })
+      .catch((error) => {
+        console.error("Session check error:", error);
+      });
+  }, []);
+
+  const onLogout = () => {
+    axios
+      .post(PROXY + "/user/logout")
+      .then((res) => {
+        console.log("Response from server:", res.data);
+        if (res.data) {
+          console.log("Logout successful!");
+          toast.success("Logout successful!");
+          setIsAuthenticated(false);
+          navigate("../");
+        } else {
+          toast.error(res.data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Logout error:", error);
+        toast.error("Logout failed!");
+      });
+  };
+
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark">
@@ -47,26 +85,41 @@ const Navbar = ({ img }) => {
           </div>
           <button
             type="button"
-            className="btn btn-primary hide-btn btn-floating btn-lg"
+            className="btn btn-primary hide-btn btn-floating btn-lg mx-2"
             onClick={search_button}
           >
             <i className="fas fa-search"></i>
           </button>
         </div>
-        <a
-          className="btn btn-lg text-white btn-rounded"
-          href="/login"
-          style={{ backgroundColor: "#01438b" }}
-        >
-          Login
-        </a>
-        <a
-          className="btn btn-lg text-white mx-3 btn-rounded"
-          href="/register"
-          style={{ backgroundColor: "#01438b" }}
-        >
-          Register
-        </a>
+
+        <div>
+          {isAuthenticated ? (
+            <button
+              className="btn btn-lg text-white btn-rounded"
+              style={{ backgroundColor: "#01438b" }}
+              onClick={onLogout}
+            >
+              Logout
+            </button>
+          ) : (
+            <div className="d-flex">
+              <Link
+                to="/login"
+                className="btn btn-lg text-white btn-rounded mx-2"
+                style={{ backgroundColor: "#01438b" }}
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="btn btn-lg text-white btn-rounded"
+                style={{ backgroundColor: "#01438b" }}
+              >
+                Register
+              </Link>
+            </div>
+          )}
+        </div>
       </nav>
       <div
         className="search-bar mt-4"
