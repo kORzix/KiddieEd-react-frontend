@@ -2,10 +2,12 @@ import loginNav from "../images/dashboard-nav-img.png";
 import Card from "../components/Card";
 import Navbar from "../components/navbar";
 import TopNavBar from "../components/topnavbar";
+import Game1 from "../components/game1";
 
 function Home() {
   return (
     <div className="App">
+      <Game1/>
       <Navbar img={loginNav} />
 
       <div className="container p-5 mb-5" style={{ width: "70%" }}>
