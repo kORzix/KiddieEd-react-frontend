@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { PROXY } from "../configs";
+import logo from "../images/kiddieed_logo.png"
 
 function search_button() {
   var x = document.getElementById("s_bar");
@@ -62,7 +63,7 @@ const Navbar = ({ img }) => {
                 fontSize: "4vw",
               }}
             >
-              KiddieEd
+              <img src={logo} alt="LOGO"/>
             </Link>
             <img
               src={img}
