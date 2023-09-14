@@ -54,7 +54,7 @@ function chat() {
   const form = document.getElementById("chat-form");
   const input = document.getElementById("chat-input");
   const messages = document.getElementById("chat-messages");
-  const apiKey = Config.API;
+  const apiKey = process.env.REACT_APP_CHATBOT_API_KEY;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
