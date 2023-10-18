@@ -38,6 +38,6 @@ body {
   }
   50% {
     background-color: white;
-    color: #007bff;
+    color: var(--background--color);
   }
 }
