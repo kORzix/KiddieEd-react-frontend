@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { PROXY } from "../configs";
 
 const Card = ({ index, image, name, id, url }) => {
+
   return (
     <div className="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12" key={index}>
       <div className="card">
@@ -10,7 +11,7 @@ const Card = ({ index, image, name, id, url }) => {
           <img
             src={PROXY + `/images/` + image}
             className="img-fluid mb-5 mt-5"
-            alt="..."
+            alt="Card image"
           />
         </div>
         <div className="card-body">

@@ -2,6 +2,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
+
+:root{
+  --white--color:white;
+  --background--color:#007bff;
+}
 .container {
   text-align: center;
   margin-top: 50px;
@@ -10,8 +15,8 @@ body {
 .blink-button {
   padding: 30px 30px;
   border-radius: 50px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--background--color);
+  color: var(--white--color);
   border: none;
   cursor: pointer;
   position: absolute;
