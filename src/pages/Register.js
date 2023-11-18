@@ -1,66 +1,80 @@
 import React, { useState } from "react";
 import loginImage from "../images/login-b.png";
 import loginNav from "../images/register-nav-img.png";
-import { useNavigate, Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import axios from "axios";
-import { PROXY } from "../configs";
+import { Link } from "react-router-dom";
+import { useSignup } from '../hooks/useSignup';
 
 function Register() {
-  const [formData, setFormData] = useState({
-    userName: "",
-    // image: '',
-    userEmail: "",
-    userPassword: "",
-    // passwordRepeat: '',
-  });
+  // const [formData, setFormData] = useState({
+  //   userName: "",
+  //   // image: '',
+  //   userEmail: "",
+  //   userPassword: "",
+  //   // passwordRepeat: '',
+  // });
 
-  const {
-    userName,
-    // image,
-    userEmail,
-    userPassword,
-    // passwordRepeat
-  } = formData;
+  // const {
+  //   userName,
+  //   // image,
+  //   userEmail,
+  //   userPassword,
+  //   // passwordRepeat
+  // } = formData;
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const onChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  // const onChange = (e) => {
+  //   setFormData((prevState) => ({
+  //     ...prevState,
+  //     [e.target.name]: e.target.value,
+  //   }));
+  // };
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
 
-    // if (userPassword !== passwordRepeat) {
-    //     toast.error('Passwords do not match')
-    // } else {
-    const userData = {
-      userName,
-      // image,
-      userEmail,
-      userPassword,
-    };
+  //   // if (userPassword !== passwordRepeat) {
+  //   //     toast.error('Passwords do not match')
+  //   // } else {
+  //   const userData = {
+  //     userName,
+  //     // image,
+  //     userEmail,
+  //     userPassword,
+  //   };
 
-    axios
-      .post(PROXY + "/user/register", userData)
-      .then((res) => {
-        if (res.data.success) {
-          toast.success("Registration successful");
-          navigate("/login");
-        } else {
-          toast.error(res.data.message);
-        }
-      })
-      .catch((error) => {
-        console.error("Registration error:", error);
-        toast.error("Registration failed. Please try again later.");
-      });
-    // }
-  };
+  //   axios
+  //     .post(PROXY + "/user/register", userData)
+  //     .then((res) => {
+  //       if (res.data.success) {
+  //         toast.success("Registration successful");
+  //         navigate("/login");
+  //       } else {
+  //         toast.error(res.data.message);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Registration error:", error);
+  //       toast.error("Registration failed. Please try again later.");
+  //     });
+  //   // }
+  // };
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
+  const { signup, error, isLoading } = useSignup()
+
+  const handleSubmit = async (e) => {
+    const role = "parent";
+    e.preventDefault()
+    await signup({ email, password ,name, role});
+    clearForm();
+  }
+  function clearForm() {
+    setEmail("");
+    setPassword("");
+    setName("");
+  }
 
   return (
     <div>
@@ -101,7 +115,7 @@ function Register() {
               }}
             >
               <h2>Create your Free Account</h2>
-              <form style={{ margin: "3em 2em 1em 2em" }} onSubmit={onSubmit}>
+              <form style={{ margin: "3em 2em 1em 2em" }} onSubmit={handleSubmit}>
                 <div className="mb-3 form-group">
                   <label htmlFor="username" className="form-label">
                     Full Name
@@ -110,11 +124,11 @@ function Register() {
                     type="text"
                     className="form-control"
                     id="username"
-                    value={userName}
+                    value={name}
                     name="userName"
                     placeholder="Full Name"
                     required
-                    onChange={onChange}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div className="mb-3 form-group">
@@ -127,9 +141,9 @@ function Register() {
                     id="useremail"
                     placeholder="Email"
                     name="userEmail"
-                    value={userEmail}
+                    value={email}
                     required
-                    onChange={onChange}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="mb-3 form-group">
@@ -142,14 +156,16 @@ function Register() {
                     id="password"
                     placeholder="Password"
                     name="userPassword"
-                    value={userPassword}
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
                     required
-                    onChange={onChange}
                   />
                 </div>
                 <div className="submit-btn">
                   <button
                     type="submit"
+                    onClick={handleSubmit}
+                    disabled={isLoading}
                     className="btn btn-primary"
                     style={{ padding: "0.2em 4em 0.2em 4em" }}
                   >
@@ -162,6 +178,7 @@ function Register() {
                     Login
                   </Link>
                 </p>
+                {error && <div className='errorSignup'>{error}</div>}
               </form>
             </div>
           </div>
