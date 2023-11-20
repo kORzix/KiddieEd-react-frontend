@@ -23,6 +23,8 @@ export const useSignup = () => {
   const signup = async ({ email, password,name, role }) => {
     setIsLoading(true);
     setError(null);
+    console.log("useSignup")
+    console.log({email, password, name, role})
     try {
       const response = await axios.post(PROXY + "/user/register", {
         email,
@@ -31,6 +33,7 @@ export const useSignup = () => {
         role,
       });
       if (response.status === 200) {
+        console.log(response.data)
         localStorage.setItem('user', JSON.stringify(response.data));
         dispatch({ type: 'LOGIN', payload: response.data.user }); // Use LOGIN type
         popupSuccessful();
